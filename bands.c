@@ -27,7 +27,7 @@
    
    C -> pixel (iX,iY)  -> index k  -> 24bit color 
    
-
+formated with emacs
    -------------
    to compile : 
 

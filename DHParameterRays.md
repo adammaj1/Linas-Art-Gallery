@@ -7,11 +7,15 @@
 
 ## the final phase angle
 We start this exploration with a picture showing **the final phase angle** when an iterated point finally escapes.  
-![phase](./html/Douady Hubbard Parameter Rays_files/phase.gif)  
+![phase](./phase.png) 
 That is, when we've iterated until |z<sub>n</sub>| > R, we look at the phase of t<sub>n</sub> of z<sub>n</sub> = r<sub>n</sub>e<sup>it<sub>n</sub></sup>. In this image, black=0, green=pi, red=2pi. In the outermost part of this image, we've iterated twice (n=2), and we can see that the phase circles twice around (i.e. for a total of 4pi). The first visible band shows the phase winding around four times times, the next eight, then sixteen. 
 
 
-We conclude:  **the phase winds around 2 to n-1 power times when it takes n iterations for a point to escape**.
+We conclude:  **the phase winds around 2 raised to the power of n-1  times when it takes n iterations for a point to escape**.
+
+"you can see the period doubling of the argument through each iteration. (Look in the image for where the band of red repeats in the level sets.) Why does the phase double every iteration? The iteration of each point proceeds by squaring the point and adding a constant. When you square a complex number, you double its argument. This is why **each iteration doubles the phase of the iterate**." [Richard A Thomson](https://user.xmission.com/~legalize/fractals/mandelbrot-hue.html)
+
+
 
 If you look carefully at this picture, several interesting things are happening. 
 * First, the interior of the M-set is colored. Ignore this; this is an unrelated artifact of the algorithm. 
@@ -33,7 +37,7 @@ The 'lining up' and doubling for each iteration allows us to use binary numbers 
 Lets look a this another way: for any real number 0 < x < 1 write down its binary expansion. Then use the digits of the binary expansion to pick one's way down through each band. After an infinite number of steps, we've reached a unique point at the surface of the M-set. For every number, there's a point at the surface.
 
 We use the 'lining-up' or period-doubling to subtract out its effects, and generate the winding number shown here.  
-![](./html/Douady Hubbard Parameter Rays_files/winding.gif)  
+![](./html/Douady Hubbard Parameter Rays_files/winding-small.gif)  
 Basically, by looking at the first picture, we can see that we can match up the colors by totaling up the winding number as the phase wraps around, and then dividing by 2<sup>n-1</sup> for each band.  
 The algorithm we used here is the simplest and fastest possible:
 

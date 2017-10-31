@@ -2,7 +2,9 @@
 
 [Linas' Art Gallery](http://linas.org/art-gallery/index.html)
 
-compare with:
+I couldn't run the programs so I made my own based on the description of algorithms
+
+See:
 * modified html files in html directory
 * md files 
   * [DHParemeterRays](./DHParameterRays.md)
@@ -22,12 +24,12 @@ Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial 
 * Iteration Max = 18
 
 
-Bands: Color is proportional to last ( final) iteration = i for which z escapes ( [Level set method = LSM/M or Integer Escape Time](https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Integer_escape_time_.3D_LSM.2FM_.3D_dwell_bands) )
+Bands: Color is proportional to last ( final) iteration = i for which z escapes ( [Level set method = LSM/M or Integer Escape Time](https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Integer_escape_time_.3D_LSM.2FM_.3D_dwell_bands) ). Level sets ( bands) of escape time  are visible
 
 ![bands](./bands.png) 
 
 
-iter18-3e0: Color is proportional to [the renormalized, fractional iteration count](http://linas.org/art-gallery/escape/escape.html) ( [Real Escape Time](https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Real_Escape_Time))
+iter18-3e0: Color is proportional to [the renormalized, fractional iteration count](http://linas.org/art-gallery/escape/escape.html) ( [Real Escape Time](https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Real_Escape_Time)). Level sets ( bands) of escape time  are not visible
 
 ![iter18-3e0](./iter18-3e0.png) 
 
@@ -46,10 +48,17 @@ Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial 
 
 
 
-Phase: color is proportional to angle in turne of last Z
+Phase: color is proportional to angle in turne of last Z. Level sets ( bands) of escape time  are visible
 
 ![phase](./phase.png)
 
+
+Winding: color is proportional to winding number of the map 
+
+![winding](./winding.png)
+
+
+Small defects are barely visible in the image above, but are prominent in the closeups. 
 
 
 # Getting Started
@@ -62,9 +71,16 @@ What things you need to install the software and how to install them
 * c compiler: gcc
 * Image Magic ( for file conversion)
 
+Here is example how to use old ( from 1996) original c code 
+
 ```
-Give examples
+gcc image.c -lm -Wall
+./image image.flo 1000 1000
+./flo2mtv image.flo > image.mtv
+ convert image.mtv image.png 
 ```
+
+I could not run new code ( 2000)
 
 ### Installing
 

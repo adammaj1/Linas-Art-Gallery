@@ -5,7 +5,7 @@
 compare with:
 * modified html files in html directory
 * md files 
-  * [DHParemeterRays](/blob/master/DHParameterRays.md)
+  * [DHParemeterRays](./DHParameterRays.md)
 * [Linas Vepstas C programs](http://fraktal.republika.pl/linas.html)
 
 ## Getting Started

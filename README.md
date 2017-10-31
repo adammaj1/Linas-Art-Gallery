@@ -7,10 +7,15 @@ compare with:
 * md files 
   * [DHParemeterRays](./DHParameterRays.md)
 * [Linas Vepstas C programs](http://fraktal.republika.pl/linas.html)
+* Images
 
 
-# Images:
+
+Color is proportional to las iteration
+
 ![bands](./bands.png) 
+
+
 
 
 

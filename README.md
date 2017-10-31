@@ -48,7 +48,7 @@ git push -u origin master
 ### HTML preview
 
 [GitHub & BitBucket HTML Preview](http://htmlpreview.github.io/?)
-[Douady-Hubbard Potential](http://htmlpreview.github.io/?https://gitlab.com/adammajewski/LinasArtGallery_MandelbrotSet/blob/master/html/Douady%20Hubbard%20Potential.html)
+
 
 
 

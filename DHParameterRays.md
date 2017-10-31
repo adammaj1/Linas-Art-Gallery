@@ -1,0 +1,81 @@
+# Douady Hubbard Parameter Rays
+
+Parameter rays are simply the curves that run perpendicular to the [equipotential curves of the M-set](https://linas.org/art-gallery/escape/ray.html). Below, we exhibit their identity to the winding number of the quadratic map.
+
+We start this exploration with a picture showing **the final phase angle** when an iterated point finally escapes.  
+![](./Douady Hubbard Parameter Rays_files/phase.gif)  
+That is, when we've iterated until |z<sub>n</sub>| > R, we look at the phase of t<sub>n</sub> of z<sub>n</sub> = r<sub>n</sub>e<sup>it<sub>n</sub></sup>. In this image, black=0, green=pi, red=2pi. In the outermost part of this image, we've iterated twice (n=2), and we can see that the phase circles twice around (i.e. for a total of 4pi). The first visible band shows the phase winding around four times times, the next eight, then sixteen. We conclude the phase winds around 2<sup>n-1</sup> times when it takes n iterations for a point to escape.
+
+If you look carefully at this picture, several interesting things are happening. First, the interior of the M-set is colored. Ignore this; this is an unrelated artifact of the algorithm. Next, notice how the red-black edges (almost) line up over multiple bands. If we picked a larger R, they would line up invisibly well. Anyway, they seem to line up and point at the tips of shoots.
+
+The 'lining up' and doubling for each iteration allows us to use binary numbers to identify each region. For the outermost region, we can use 0 to denote the upper half, and 1 to denote the lower half. Then, for each subsequent band, we can use 0 if the band lines up to angles less than pi in the previous band, and 1 if it lines up with angles greater than pi in the previous band. Thus, any sequence of binary digits can be used to walk us towards the M-set, with each digit determining which fork should be taken. If we put a decimal point in front of the sequence, then we have a binary expansion of a real number between 0 and 1\. We refer to this number, somewhat incorrectly, as the winding number.
+
+Lets look a this another way: for any real number 0 < x < 1 write down its binary expansion. Then use the digits of the binary expansion to pick one's way down through each band. After an infinite number of steps, we've reached a unique point at the surface of the M-set. For every number, there's a point at the surface.
+
+We use the 'lining-up' or period-doubling to subtract out its effects, and generate the winding number shown here.  
+![](./Douady Hubbard Parameter Rays_files/winding.gif)  
+Basically, by looking at the first picture, we can see that we can match up the colors by totaling up the winding number as the phase wraps around, and then dividing by 2<sup>n-1</sup> for each band.  
+The algorithm we used here is the simplest and fastest possible:
+
+*   For each parameter c, and each iteration k
+*   we compute the phase t<sub>k</sub> of z<sub>k</sub> = r<sub>k</sub>e<sup>it<sub>k</sub></sup>. We use arctan to compute the phase.
+
+<sub>k</sub>
+
+<sub>k-1</sub>
+
+<sub>k</sub>
+
+The defects are barely visible in the image above, but are prominent in these closeups. [![](./Douady Hubbard Parameter Rays_files/defect-bud2-small.gif)](https://linas.org/art-gallery/escape/phase/defect-bud2.gif)   
+[![](./Douady Hubbard Parameter Rays_files/defect-bud3-small.gif) ](https://linas.org/art-gallery/escape/phase/defect-bud3.gif) The lozenges and wedges shouldn't be there. The shading should be smooth and continuous. In these areas, there seems to be no simple way of discerning a doubling merely by looking at the sequence of z<sub>n</sub>'s, and basically, we mis-count. Note, however, that _except_ for these areas where we obviously mis-count, this simple algorithm does, otherwise, give 'exact' results.  
+
+There seems to be no easy way of simply fixing the algorithm, and not for lack of trying. [![](./Douady Hubbard Parameter Rays_files/artifacts-small.gif)](https://linas.org/art-gallery/escape/phase/artifacts.gif)   
+[![](./Douady Hubbard Parameter Rays_files/purty-small.gif) ](https://linas.org/art-gallery/escape/phase/purty.gif) Here, examples of screwed up algorithms. Beautiful, but meaningless... Heck, this _was_ supposed to be an art-gallery, until we started slinging the expository math about. Sigh. So this image is our contribution to 'Art'. The rest of the images on this page will have to be considered 'technical diagrams'.  
+
+Here's an example of an 'almost' correct algorithm. The idea here is to try to step/integrate along lines of constant phase, moving away from the M-set. We use the vector Dm (employing the notation introduced on the [Potential Page](https://linas.org/art-gallery/escape/ray.html)) as a predictor to step one iteration at a time away from the M-set. The explicit algorithm is this: Define a sequence {c<sub>k</sub>} with c<sub>0</sub> = c and k<n, where n is the number of times that c is iterated until it reaches some (large) escape radius. Then try
+
+c<sub>k+1</sub> = c<sub>k</sub> - 2Dm<sub>k</sub>/|Dm<sub>k</sub>|<sup>2</sup>
+
+where Dm<sub>k</sub> is the derivative of the fractional iteration count m at c<sub>k</sub>. With each c<sub>k</sub>, we iterate one less time, (i.e. we iterate n-k times). Then the phase of c<sub>n</sub> seems to be an approximation to the true phase. In particular, it is free of the discontinuities plaguing the simple algorithm. [![](./Douady Hubbard Parameter Rays_files/correct-bud2-small.gif)](https://linas.org/art-gallery/escape/phase/correct-bud2.gif)   
+[![](./Douady Hubbard Parameter Rays_files/correct-bud3-small.gif) ](https://linas.org/art-gallery/escape/phase/correct-bud3.gif) Notice how much prettier, and more visually correct these images are, compared to their equivalents above.  
+
+However, this algorithm has some serious spread-out error terms, as shown here. [![](./Douady Hubbard Parameter Rays_files/algo-diff-small.gif) ](https://linas.org/art-gallery/escape/phase/algo-diff.gif) This image shows the difference between the exact phase, and our approximation. The image is colored so that red represents differences of 2 percent or more between the approximate and the true phase. Although 2 percent may seem small, it is hopelessly large when used for tracing rays.  
+
+The lines of constant phase are exactly what is referred to as the Douady-Hubbard 'external rays'. With a tiny bit of math, its easy to see that these lines of constant phase are exactly perpendicular to the equipotential lines. Using the notation introduced on the [Potential Page](https://linas.org/art-gallery/escape/ray.html), we have
+
+Dt<sub>n</sub> = i <u>z</u><sub>n</sub> Dz<sub>n</sub> / 2 |z<sub>n</sub>|<sup>2</sup>
+
+and we recall that multiplying by i is the same as rotating by 90 degrees.
+
+## Ray Atlas
+
+[![](./Douady Hubbard Parameter Rays_files/landing-62-small.gif) ](https://linas.org/art-gallery/escape/phase/landing-62.gif)
+
+Rays, 105 spread out evenly at the circle at infinity. [![](./Douady Hubbard Parameter Rays_files/landing-210-small.gif) ](https://linas.org/art-gallery/escape/phase/landing-210.gif) That is, the center of the red lines lies at 2j pi/105 for j=(0..105). Note how a number of these rays land where buds pinch off from the main cardiod. We can easily count these by hand. The j=0 ray lies due east, emanating from the scorpion tail. Then we count. The rays at j=7,14 pinch off the n=4 bud (and thus, we say that the 'arc-angle size' of the n=4 bud is (14-7)/105 = 7/105=1/21). The two rays j=15,30 pinch off the n=3 bud (for an angular size of 15/105=1/7). The two rays j=35,70 pinch off the n=2 bud (for an angular size of 35/105=1/3). With a bit of combinatorial effort, some fairly general expressions for the angular sizes of buds, antennae, and other features on the M-set can be given as exact rational numbers. This is one of the main results of the Douady-Hubbard theory.  
+
+To see that the exact ratios are really exact, compare the pictures above and below. [![](./Douady Hubbard Parameter Rays_files/landing-211-small.gif) ](https://linas.org/art-gallery/escape/phase/landing-211.gif) Here, again we have 105 rays, but slightly askew, so that no simple fractions arise. The angles center of the red days are given by 4j pi/211 for j=(0..105). By the way, notice the Moire patterns in the interior of the M-set. The interior has nothing to do with anything, its just a by-product of the algorithm we use to generate these pictures.  
+
+Here are some rays in the vicinity of the n=3 bud. [![](./Douady Hubbard Parameter Rays_files/land-3bud-512-small.gif)](https://linas.org/art-gallery/escape/phase/land-3bud-512.gif)   
+[![](./Douady Hubbard Parameter Rays_files/land-3bud-513-small.gif) ](https://linas.org/art-gallery/escape/phase/land-3bud-513.gif) The one on the left has red = 2j pi/256 for j=(0..256); the one on the right has red = 4j pi/513 for j=(0..256). There are two interesting things about this picture: fractions that have a power-of-two in the denominator seem to be associated with rays that land at the tips of antenna. (We already noticed this above, in the very very first picture). The second interesting thing is that most of the landing rays land on the antenna, not on the bud. From this, we conclude that most of the arc-angle size of the bud is in fact the antenna.  
+
+Here's the n=3 bud when there are 1008=16*9*7 rays distributed around the circle. [![](./Douady Hubbard Parameter Rays_files/land-bud3-1008-small.gif) ](https://linas.org/art-gallery/escape/phase/land-bud3-1008.gif) As we saw above, the n=3 bud is pinched off by rays [1/7,2/7]. The largest bulblet on top of it is at [10/63,17/63]. This rapidly turns into a game of common multiples: note that 10/63 = 1/7 + 1/63 = 1/7(1+1/9). And symmetrically on the other side: 17/63 = 2/7 - 1/63\. The width of the bulblet is, of course, 1/9. There are three rays that land at the trifurcation of the antenna, they are [81/504, 99/504, 135/504]. We can't help but notice that 81/504 = 10/63+1/504 = 10/63(1+1/8). Notice also, the left hand side of the antenna (the larger side) as a width of 1/14, while the right hand side has a width of 1/28. And finally, the smallest trifurcation visible in this image is at [207/1008, 225/1008, 261/1008]. The widths are 1/56 on the right, and 1/28 on the left. If we were to blow things up to 2016 rays, we'd see a trifurcation coming in on the right hand side of the antenna. Its curious how the size of a smaller wake inside a larger one is always the largest possible, with the simplest 'suitable' fraction.  
+
+Rays in the vicinity of the n=2 bud. [![](./Douady Hubbard Parameter Rays_files/land-2bud-2310-small.gif) ](https://linas.org/art-gallery/escape/phase/land-2bud-2310.gif) Red = 2j pi/1155 for j=(0..1155). Note that 1155=3*5*7*11. Again, the vast majority of rays are soaked up on antenna. Note that the algorithm defects are quite visible in this closeup. The Moire pattern is also rather pretty.  
+
+## A Detailed Atlas
+
+[Visual Atlas](https://linas.org/art-gallery/escape/phase/atlas.html)
+
+[Angle Tables](https://linas.org/art-gallery/escape/phase/arcs.html)
+
+[Visual Atlas](https://linas.org/art-gallery/escape/phase/atlas.html)
+
+[Angle Tables](https://linas.org/art-gallery/escape/phase/arcs.html)
+
+Be sure to also check the bibliography on the [Potential Page](https://linas.org/art-gallery/escape/ray.html) for more details.
+
+* * *
+
+[linas@linas.org](mailto:linas@linas.org)
+
+[Return to Linas' Art Gallery](https://linas.org/art-gallery/index.html)

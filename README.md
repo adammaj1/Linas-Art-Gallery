@@ -22,7 +22,7 @@ Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial 
 * Iteration Max = 18
 
 
-Bands: Color is proportional to last ( final) iteration = i for which z escapes ( Level set method = LSM/M or Integer Escape Time )
+Bands: Color is proportional to last ( final) iteration = i for which z escapes ( [Level set method = LSM/M or Integer Escape Time](https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Integer_escape_time_.3D_LSM.2FM_.3D_dwell_bands) )
 
 ![bands](./bands.png) 
 

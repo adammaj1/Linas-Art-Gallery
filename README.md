@@ -3,6 +3,9 @@
 [Linas' Art Gallery](http://linas.org/art-gallery/index.html)
 
 compare with:
+* modified html files in html directory
+* md files 
+  * [DHParemeterRays](DHParemeterRays.md)
 * [Linas Vepstas C programs](http://fraktal.republika.pl/linas.html)
 
 ## Getting Started

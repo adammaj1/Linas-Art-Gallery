@@ -14,10 +14,10 @@ compare with:
 
 Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
 * Rectangle part of 2D parameter plane: 
-  * corners: CxMin = -2.000000;   CxMax = 0.700000;  CyMin = -1.350000; CyMax = 1.350000 
-  * center and radius:  CenterX = -0.650000;   CenterY = 0.000000;  radius = 1.350000
-  * Mag = zoom = 0.740741
-* PixelWidth = 0.002700 and PixelHeight =0.002700
+  * [corners](https://en.wikibooks.org/wiki/Fractals/Computer_graphic_techniques/2D/plane#Corners): CxMin = -2.000000;   CxMax = 0.700000;  CyMin = -1.350000; CyMax = 1.350000 
+  * [center and radius](https://en.wikibooks.org/wiki/Fractals/Computer_graphic_techniques/2D/plane#radius):  CenterX = -0.650000;   CenterY = 0.000000;  radius = 1.350000
+  * [magnification = Mag = zoom](https://en.wikibooks.org/wiki/Fractals/Computer_graphic_techniques/2D/plane#magnification) = 0.740741
+* [Pixel Size](https://en.wikibooks.org/wiki/Fractals/Computer_graphic_techniques/2D/plane#Pixel_size) : PixelWidth = 0.002700 and PixelHeight =0.002700
 * Escape Radius = 3.000000
 * Iteration Max = 18
 
@@ -27,7 +27,7 @@ Bands: Color is proportional to last ( final) iteration = i for which z escapes 
 ![bands](./bands.png) 
 
 
-iter18-3e0: Color is proportional to the renormalized, fractional iteration count ( Real Escape Time)
+iter18-3e0: Color is proportional to [the renormalized, fractional iteration count](http://linas.org/art-gallery/escape/escape.html) ( [Real Escape Time](https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Real_Escape_Time))
 
 ![iter18-3e0](./iter18-3e0.png) 
 

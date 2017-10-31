@@ -32,6 +32,24 @@ iter18-3e0: Color is proportional to [the renormalized, fractional iteration cou
 ![iter18-3e0](./iter18-3e0.png) 
 
 
+## [Douady Hubbard Parameter Rays](https://linas.org/art-gallery/escape/phase/phase.html)
+
+
+Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
+* Rectangle part of 2D parameter plane: 
+  * corners:  CxMin = -2.400000;   CxMax = 1.500000;  CyMin = -1.950000; CyMax = 1.950000 
+  * center and radius:  CenterX = -0.450000;   CenterY = 0.000000;  radius = 1.950000
+  * Mag = zoom = 0.512821
+* PixelWidth = 0.003900 and PixelHeight =0.003900
+* Escape Radius = 3.000000
+* Iteration Max = 400
+
+
+
+Phase: color is proportional to angle in turne of last Z
+
+![phase](./phase.png)
+
 
 
 # Getting Started

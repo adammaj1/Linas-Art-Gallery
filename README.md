@@ -32,6 +32,15 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
+### Git
+```
+git init
+git remote add origin git@gitlab.com:adammajewski/LinasArtGallery_MandelbrotSet.git
+git add html
+git commit -m "html"
+git push -u origin master
+```
+
 ## Running the tests
 
 Explain how to run the automated tests for this system

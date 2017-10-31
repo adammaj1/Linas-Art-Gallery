@@ -11,11 +11,14 @@ compare with:
 
 
 
-Color is proportional to las iteration
+Color is proportional to last ( final) iteration = i for which z escapes
 
 ![bands](./bands.png) 
 
 
+Color is proportional to the renormalized, fractional iteration count
+
+![iter18-3e0](./iter18-3e0.png) 
 
 
 

@@ -8,6 +8,13 @@ compare with:
   * [DHParemeterRays](./DHParameterRays.md)
 * [Linas Vepstas C programs](http://fraktal.republika.pl/linas.html)
 
+
+# Images:
+![bands](./bands.png) 
+
+
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.

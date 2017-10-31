@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0044)http://linas.org/art-gallery/escape/ray.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Douady Hubbard Potential</title>
+<meta name="keywords" content="Mandelbrot, external ray, ray,
+    renormalization, Douady, Hubbard">
+<meta name="description" content="Explicit expression for the 
+    Douady-Hubbard potential, and some fast algorithms for 
+    computing related quantities.">
+</head>
+<body>
+<h1>Douady-Hubbard Potential</h1>
+The 
+<a href="http://linas.org/art-gallery/escape/escape.html">generalization of the integer iteration count</a>
+gives us a handy tool for computing other quantities, including Douady-Hubbard rays.
+<br><br><br>
+This is because the renormalized count can be used to provide a simple
+expression for the Douady-Hubbard potential.  
+<br><br><br>
+
+
+We give the the expression,
+and then prove that <a href="https://en.wikipedia.org/wiki/Potential_theory">the potential</a> is indeed <a href="https://en.wikipedia.org/wiki/Harmonic_function">harmonic</a>, immediately below.
+<p>
+The iterated quadratic is
+</p><p>
+z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup>+c
+</p>
+
+<br><br><br>
+
+<p>
+<strong>The renormalized iteration count</strong> m is
+</p><p>
+m(R) = n+1 - log(log |z<sub>n</sub>|) / log 2
+</p><p>
+where we have picked an escape radius R, and defined n to be the
+smallest n such that R &lt; |z<sub>n</sub>| .  Then, as shown on the 
+<a href="http://linas.org/art-gallery/escape/escape.html">Escape Page</a>, m(R) is 
+'almost' independent of R and n, in the sense that m approaches a 
+well-defined limit as R-&gt;oo, and, in fact, converges very rapidly.
+It is also 'almost' continuous and smooth, in the sense that 
+there are only a measure-zero of discontinuities for finite R, and that 
+all discontinuities are bounded, and get vanishingly small in the limit 
+of R-&gt;oo.  That is, in the limit, m becomes continuous and
+smooth, and, as a practical, computational matter, is plenty smooth
+enough for small R (100 to 10000).  Below, when we write m, we sometimes
+mean the limit m(R-&gt;oo) and sometimes m(R) for finite R, and most
+of the statements apply to either.
+</p><p>
+<strong>The Douady-Hubbard potential</strong> f is just
+</p><p>
+f = e<sup>-m log2</sup> = 2<sup>-m</sup>
+</p>
+
+
+
+
+<p>
+Let us now show that f is harmonic, both in the limit R-&gt;oo and
+for finite R, and that it has the right asymptotic behavior.
+The limitations of html make this presentation hard.  Please bear with
+us as we define some basic notation.
+</p>
+<br><br><br>
+
+<p>
+Lets define D as <strong>the derivative with respect to c</strong> 
+where c is a complex variable c=x+iy in the usual fashion:
+</p>
+
+<p>
+D = d/dc = (d/dx - id/dy)/2
+</p><p>
+and <u>D</u> as <strong>complex conjugate of D</strong>
+</p>
+
+
+<p>
+<u>D</u> = d/d<u>c</u> = (d/dx + id/dy)/2
+</p><p>
+where we use an underline because 'overline', the usual way of showing this, is not available in html.  
+<br><br><br>
+
+
+<strong><a href="https://en.wikipedia.org/wiki/Laplace_operator">The harmonic or Laplacian operator </a></strong> is then just  
+</p><p>
+ 4 D<u>D</u> = d<sup>2</sup>/dx<sup>2</sup> + d<sup>2</sup>/dy<sup>2</sup>
+</p><p>
+<br><br><br>
+
+
+Lets review some trivial factoids to make sure we're on the same
+page. Since z<sub>n</sub>(c,<u>c</u>) = z<sub>n</sub>(c) is not a 
+function of <u>c</u>, we have <u>D</u>z = D<u>z</u> = 0 .  The modulus 
+is just |z| = sqrt(z<u>z</u>), and the derivative of the modulus is 
+D|z| =  <u>z</u> Dz / (2|z|) . 
+<br><br><br>
+
+We can now combine these to compute <strong>the Laplacian of the the renormalized iteration count</strong>:
+</p><p>
+4 D<u>D</u> m = Dz<sub>n</sub> <u>Dz</u><sub>n</sub> / 
+                (log 2 |z<sub>n</sub>|<sup>2</sup> log<sup>2</sup> |z<sub>n</sub>|)
+</p><p>
+Note that this depends implicitly on the escape radius R, since by definition,
+R &lt; |z<sub>n</sub>|.  Thus, it would seem that the harmonic can be made 
+arbitrarily small, provided the numerator was bounded.  Unfortunately, it 
+is not; not only is it unbounded, but it diverges 'worse than
+exponentially' as one approaches the boundary of the M-set.
+</p>
+
+<br><br><br>
+
+
+<p>
+<strong>The Laplacian of the potential</strong> is
+</p><p>
+4 D<u>D</u> f = 4f (log<sup>2</sup>2 Dm <u>D</u>m - log2 D<u>D</u>m)
+</p><p>
+But
+</p><p>
+Dm = D|z<sub>n</sub>| / (log2 |z<sub>n</sub>| log |z<sub>n</sub>|) 
+</p><p>
+Substituting from the above, we can easily see 
+</p><p>
+D<u>D</u> f = 0
+</p><p>
+both for finite R and R-&gt;oo.  For finite R, f has 'small'
+discontinuities, which vanish in the limit;  thus the harmonic is
+non-zero on the discontinuities, but these vanish in the limit, and 
+f is harmonic everywhere outside the M-set.  
+To complete this analysis of this
+function, we check the asymptotic behavior.  
+For finite R, we can write f(R) = 2<sup>-(n+1)</sup> log |z<sub>n</sub>| .
+Thus, for c approaching the boundary of the M-set, n gets infinitely large,
+whereas |z<sub>n</sub>| &lt; R<sup>2</sup>
+and so f=0 on the boundary.
+At the other end, for large c, we can approximate 
+z<sub>n+1</sub> ~z<sub>n</sub><sup>2</sup> for any n, and so 
+</p><p>
+m ~ 2 - log(log |c|) / log 2
+</p><p>
+and
+</p><p>
+f ~ log |c| / 4 
+</p><p>
+for large c.
+</p>
+
+
+<br><br><br>
+
+<p>
+Now that we have f, we should play a few games.  
+We could draw a picture of f, but that in fact is 'boring'. f gets exponentially flat as it approaches the boundary of 
+the M-set, and thus, it looks like a very blurry low-res picture of the M-set.  Boring.
+</p>
+
+<br><br><br>
+
+
+
+<p>
+<strong><a href="https://en.wikipedia.org/wiki/Gradient">The gradient</a> of potential</strong> is more interesting. 
+
+<p>
+G(f) = 2Df = f <u>z</u><sub>n</sub> Dz<sub>n</sub> / 
+       |z<sub>n</sub>|<sup>2</sup> log |z<sub>n</sub>|
+</p>
+
+The gradient always points 'uphill'.
+</p>
+
+<br><br>
+
+
+
+<p>
+The picture below shows <strong>the modulus of the gradient</strong>.  
+
+
+Of course, it resembles a coronal discharge.  If one were to cut out 
+a metal plate in the shape of an M-set, apply a high voltage to it,
+it is exactly this that you would see, because it is the areas of high
+electric field (gradient) where the coronal ionization will occur.
+Maybe make a chic lightning rod for the barn.
+
+</p>
+<br><br>
+<img src="./Douady Hubbard Potential_files/electric.gif" >
+
+<br><br><br>
+
+
+The next picture encodes <strong>the angle of the landing rays on the M-set</strong>.
+
+It is nothing more than the phase = angle of the gradient. The color coding is such that black=0, blue=small angle, green=pi,
+red=2pi.  In other words, green points west, and red/black points east, just as it was in the Soviet era. 
+
+
+
+
+
+<img src="Douady Hubbard Potential_files/landing.gif" >
+
+<br><br><br>
+
+
+
+This last image shows some <strong>landing rays</strong>.
+
+A 'landing ray' is just the integral flow along the gradient lines of
+the potential; i.e. the path a rock rolling down the hill to the M-set
+would take.  We've picked 31 evenly-spaced angles at infinity; the red
+lines indicate the flow along these paths.  The color gradations help 
+show the behavior of some neighboring rays: i.e. the blue rays are
+nearby neighbors of the red rays. The spreading as they 'land' on the 
+M-set just helps show that rays become radically divergent.  The
+Mandelbrot interior is an artifact of the algorithm, and are not a part
+of the Douady-Hubbard isomorphism.
+
+<br><br><br>
+
+<img src="./Douady Hubbard Potential_files/landing-62.gif" >
+
+<br><br><br>
+See the <a href="http://linas.org/art-gallery/escape/phase/phase.html">Winding Page</a> for more details
+on the derivation, and more pictures.
+
+
+
+
+
+
+
+
+<h1>References</h1>
+<ul>
+<li>John Milnor, <i>Periodic Orbits, External Rays and the Mandelbrot 
+    Set: An Expository Account</i>, (<a href="http://linas.org/art-gallery/escape/ams99-3.ps">postscript,
+    mirror</a> of StonyBrook preprint). 
+
+</li>
+</ul>
+
+
+<hr>
+Created by Linas Vepstas December 2000<br>
+<a href="mailto:linas@linas.org">linas@linas.org</a><br>
+<a href="http://linas.org/art-gallery/index.html">Return to Linas' Art Gallery</a><br>
+Copyright (c) 2000 Linas Vepstas.<br>
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="./Douady Hubbard Potential_files/88x31.png"></a><br>
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Douady Hubbard Potential</span>
+by <a xmlns:cc="http://creativecommons.org/ns#" href="https://linas.org/art-gallery/escape/" property="cc:attributionName" rel="cc:attributionURL">Linas Vepstas</a> is licensed under a 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+Attribution-ShareAlike 4.0 International License</a>.
+
+
+
+</body></html>

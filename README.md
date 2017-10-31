@@ -10,16 +10,16 @@ compare with:
 * Images
 
 
+## [Smooth Shading for the Mandelbrot Exterior](http://linas.org/art-gallery/escape/smooth.html)
 
- Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
-  Rectangle part of 2D parameter plane: corners: 
- CxMin = -2.000000;   CxMax = 0.700000;  CyMin = -1.350000; CyMax = 1.350000 
-  center and radius: 
- CenterX = -0.650000;   CenterY = 0.000000;  radius = 1.350000
-  Mag = zoom = 0.740741
- PixelWidth = 0.002700 and PixelHeight =0.002700
- Escape Radius = 3.000000
-  Iteration Max = 18
+Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
+* Rectangle part of 2D parameter plane: 
+  * corners: CxMin = -2.000000;   CxMax = 0.700000;  CyMin = -1.350000; CyMax = 1.350000 
+  * center and radius:  CenterX = -0.650000;   CenterY = 0.000000;  radius = 1.350000
+  * Mag = zoom = 0.740741
+* PixelWidth = 0.002700 and PixelHeight =0.002700
+* Escape Radius = 3.000000
+* Iteration Max = 18
 
 
 Bands: Color is proportional to last ( final) iteration = i for which z escapes ( Level set method = LSM/M or Integer Escape Time )
@@ -34,13 +34,15 @@ iter18-3e0: Color is proportional to the renormalized, fractional iteration coun
 
 
 
-## Getting Started
+# Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+# Prerequisites
 
 What things you need to install the software and how to install them
+* c compiler: gcc
+* Image Magic ( for file conversion)
 
 ```
 Give examples

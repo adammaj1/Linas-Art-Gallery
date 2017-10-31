@@ -44,7 +44,7 @@ git push -u origin master
 
 ### HTML preview
 
-[GitHub & BitBucket HTML Preview]()http://htmlpreview.github.io/?)
+[GitHub & BitBucket HTML Preview](http://htmlpreview.github.io/?)
 
 
 ## Running the tests

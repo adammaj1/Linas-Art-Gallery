@@ -2,9 +2,9 @@
 /* 
 
 
-  http://linas.org/art-gallery/escape/smooth.html
-  image 
-  http://linas.org/art-gallery/escape/iter18-3e0.gif
+   http://linas.org/art-gallery/escape/smooth.html
+   image 
+   http://linas.org/art-gallery/escape/iter18-3e0.gif
   
    c console program:
    
@@ -22,15 +22,16 @@
    
    complex point c -> virtual 2D array -> memory 1D array -> ppm file on the disc -> png file 
    
-    C -> pixel (iX,iY)  -> index k  -> 24bit color 
+   C -> pixel (iX,iY)  -> index k  -> 24bit color 
    
------
+   -----
    https://stackoverflow.com/questions/6418807/how-to-work-with-complex-numbers-in-c
    complex numbers are built in type 
  
- 
- -------------
-  to compile : 
+ --------------
+ formated with emacs
+   -------------
+   to compile : 
 
  
  
@@ -40,15 +41,15 @@
    ./a.out
    
    
-to convert to png using ImageMagic
+   to convert to png using ImageMagic
 
-  convert iter18-3e0.ppm iter18-3e0.png  
+   convert iter18-3e0.ppm iter18-3e0.png  
 
 
 
- ----------------------
- git add  iter18-3e0.png iter18-3e0.c
- push -u origin master
+   ----------------------
+   git add  iter18-3e0.png iter18-3e0.c
+   push -u origin master
 
 
 
@@ -102,7 +103,7 @@ size_t MemmorySize;
     
 void GiveLinasColor(double position , int k, unsigned char c[])
 {
-/* based on the code by Linas Vepstas January 16 1994 : void make_cmap (void) */
+  /* based on the code by Linas Vepstas January 16 1994 : void make_cmap (void) */
 
    
   int i;
@@ -111,45 +112,45 @@ void GiveLinasColor(double position , int k, unsigned char c[])
   c[0] = c[1] = c[2] = 0;
   /* set up a default look up table */
   /* ramp up to blue */
-    if (i<60) {
-            c[k] = 0;
-            c[k+1] = 0;
-            c[k+2] = (unsigned char) i*3;
-        }
-    /* ramp down from blue, up to green */
-    if (i>=60 && i<120) {
-            c[k] = 0;
-            c[k+1] = (unsigned char) (i-60)*3;
-            c[k+2] = (unsigned char) (120-i)*3;
-        }
-    /* ramp from green to yellow */
-    if (i>=120 && i<180) {
-            /* vlt[i].r = (char) (((i-120)*7) / 2); */
-            c[k] = (unsigned char) (210 - (7*(180-i)*(180-i)) / 120);
-            c[k+1] = (unsigned char) (210 -i/4);
-            c[k+2] = 0;
-        }
-    /* ramp from yellow to red (pink) */
-    if (i>=180 && i<iMax) {
-            c[k] = (unsigned char) (210 + (3*(i-180))/4);
-            c[k+1] = (unsigned char) (510 - 2*i);
-            c[k+2] = (unsigned char) (i-180)/3;
-        }
+  if (i<60) {
+    c[k] = 0;
+    c[k+1] = 0;
+    c[k+2] = (unsigned char) i*3;
+  }
+  /* ramp down from blue, up to green */
+  if (i>=60 && i<120) {
+    c[k] = 0;
+    c[k+1] = (unsigned char) (i-60)*3;
+    c[k+2] = (unsigned char) (120-i)*3;
+  }
+  /* ramp from green to yellow */
+  if (i>=120 && i<180) {
+    /* vlt[i].r = (char) (((i-120)*7) / 2); */
+    c[k] = (unsigned char) (210 - (7*(180-i)*(180-i)) / 120);
+    c[k+1] = (unsigned char) (210 -i/4);
+    c[k+2] = 0;
+  }
+  /* ramp from yellow to red (pink) */
+  if (i>=180 && i<iMax) {
+    c[k] = (unsigned char) (210 + (3*(i-180))/4);
+    c[k+1] = (unsigned char) (510 - 2*i);
+    c[k+2] = (unsigned char) (i-180)/3;
+  }
    
 }
 
        
         
 /* 
-gives position ( index) in 1D virtual array  of 2D point (iX,iY) from ; uses also global variable iWidth 
-without bounds check !!
+   gives position ( index) in 1D virtual array  of 2D point (iX,iY) from ; uses also global variable iWidth 
+   without bounds check !!
 */
 int f(int ix, int iy)
 { return ColorBytes*(ix + iy*iWidth); }
         
         
         
- double complex give_c(int iX, int iY){
+double complex give_c(int iX, int iY){
   double Cx,Cy;
   Cy=CyMin + iY*PixelHeight;
   
@@ -166,15 +167,15 @@ int f(int ix, int iy)
 int ComputeAndSavePixelColor(int iX, int iY){
  
   
-   complex double C;
-   int i; // iteration
-   double complex Z= 0.0; // initial value for iteration Z0
-   int k; // index of the 1D array
+  complex double C;
+  int i; // iteration
+  double complex Z= 0.0; // initial value for iteration Z0
+  int k; // index of the 1D array
    
-   C = give_c(iX, iY);
+  C = give_c(iX, iY);
    
-   // iteration
-   for(i=0;i<IterationMax;i++)
+  // iteration
+  for(i=0;i<IterationMax;i++)
     {
       
       Z=Z*Z+C; 
@@ -182,18 +183,18 @@ int ComputeAndSavePixelColor(int iX, int iY){
     }
    
      
-   // index of 1D memory array
-   k = f(iX, iY);  
+  // index of 1D memory array
+  k = f(iX, iY);  
     
-   // the renormalized, fractional iteration count
-   // m(R) = n+1 - log(log |zn|) / log 2
-   // http://linas.org/art-gallery/escape/escape.html
+  // the renormalized, fractional iteration count
+  // m(R) = n+1 - log(log |zn|) / log 2
+  // http://linas.org/art-gallery/escape/escape.html
     
-   double m = i + 1.0 - log(log(cabs(Z)))/log_2;
-   m = m/IterationMax; // normalize = map to [0,1]
+  double m = i + 1.0 - log(log(cabs(Z)))/log_2;
+  m = m/IterationMax; // normalize = map to [0,1]
    
-   //Apply this method to both exterior and interior 
-   GiveLinasColor(m , k,  data); // https://linas.org/art-gallery/escape/iter18-3e0.gif
+  //Apply this method to both exterior and interior 
+  GiveLinasColor(m , k,  data); // https://linas.org/art-gallery/escape/iter18-3e0.gif
       
     
  
@@ -221,13 +222,13 @@ int setup(){
   printf (" No errors. End of setup \n");
   return 0;
 
- }
+}
  
  
  
  
  
- // save dynamic "A" array to pgm file 
+// save dynamic "A" array to pgm file 
 int SaveArray_2_PPM_file (unsigned char A[])
 {
 
@@ -250,12 +251,12 @@ int SaveArray_2_PPM_file (unsigned char A[])
  
  
 void CreateImage(){
- int iX,iY; // screen = integer coordinate in pixels       
+  int iX,iY; // screen = integer coordinate in pixels       
 
   // fill the array = render image = scanline 2D  of virtual 2D array 
   for(iY=0;iY<iHeight;iY++)
     for(iX=0;iX<iWidth;iX++)
-      	ComputeAndSavePixelColor(iX, iY); 
+      ComputeAndSavePixelColor(iX, iY); 
       	
       	
   SaveArray_2_PPM_file (data);     	  
@@ -281,8 +282,8 @@ void info(){
  
 void close(){
  
- info(); 
- free(data); 
+  info(); 
+  free(data); 
 }
  
  

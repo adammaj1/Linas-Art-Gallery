@@ -1,3 +1,4 @@
+
 # Douady Hubbard Parameter Rays
 
 [Parameter rays](https://en.wikipedia.org/wiki/External_ray) are simply the curves that run [perpendicular](https://en.wikipedia.org/wiki/Perpendicular) to the [equipotential curves of the M-set](https://linas.org/art-gallery/escape/ray.html). Below, we exhibit their identity to the winding number of the quadratic map.
@@ -51,19 +52,16 @@ The 'lining up' and doubling for each iteration allows us to use binary numbers 
 ## winding number 
 Lets look a this another way: for any real number 0 < x < 1 write down its binary expansion. Then use the digits of the binary expansion to pick one's way down through each band. After an infinite number of steps, we've reached a unique point at the surface of the M-set. For every number, there's a point at the surface.
 
-We use the 'lining-up' or period-doubling to subtract out its effects, and generate the winding number shown here.  
+We use the 'lining-up' or period-doubling to subtract out its effects (match up the colors) and generate the winding number shown here.  
 ![](./html/Douady Hubbard Parameter Rays_files/winding-small.gif)  
-Basically, by looking at the first picture, we can see that we can match up the colors by totaling up the winding number as the phase wraps around, and then dividing by 2<sup>n-1</sup> for each band.  
-The algorithm we used here is the simplest and fastest possible:
 
-*   For each parameter c, and each iteration k
-*   we compute the phase t<sub>k</sub> of z<sub>k</sub> = r<sub>k</sub>e<sup>it<sub>k</sub></sup>. We use arctan to compute the phase.
 
-<sub>k</sub>
+The algorithm we use here is the simplest and fastest possible:
+* For each parameter c, and each iteration k  compute the phase t<sub>k</sub> of z<sub>k</sub> = r<sub>k</sub>e<sup>it<sub>k</sub></sup> usingse arctan 
+* totaling up the winding number as the phase wraps around  
+* divid by 2<sup>n-1</sup> for each band
 
-<sub>k-1</sub>
 
-<sub>k</sub>
 
 The defects are barely visible in the image above, but are prominent in these closeups. [![](./Douady Hubbard Parameter Rays_files/defect-bud2-small.gif)](https://linas.org/art-gallery/escape/phase/defect-bud2.gif)   
 [![](./html/Douady Hubbard Parameter Rays_files/defect-bud3-small.gif) ](https://linas.org/art-gallery/escape/phase/defect-bud3.gif) The lozenges and wedges shouldn't be there. The shading should be smooth and continuous. In these areas, there seems to be no simple way of discerning a doubling merely by looking at the sequence of z<sub>n</sub>'s, and basically, we mis-count. Note, however, that _except_ for these areas where we obviously mis-count, this simple algorithm does, otherwise, give 'exact' results.  
@@ -121,6 +119,9 @@ GitLab uses:
 * the Redcarpet Ruby library for [Markdown processing](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)
 * KaTeX to render [math written with the LaTeX syntax](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md), but [only subset](https://khan.github.io/KaTeX/function-support.html)
 
+
+[Original html file by Linas Vepstas](https://linas.org/art-gallery/escape/phase/phase.html)
+Here is translation to markdown format 
 
 
 [Return to Linas' Art Gallery](https://linas.org/art-gallery/index.html)

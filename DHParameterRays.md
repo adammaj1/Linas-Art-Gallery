@@ -7,8 +7,15 @@
 
 ## the final phase angle
 We start this exploration with a picture showing **the final phase angle** when an iterated point finally escapes.  
-![phase](./phase.png) 
-That is, when we've iterated until |z<sub>n</sub>| > R, we look at the phase of t<sub>n</sub> of z<sub>n</sub> = r<sub>n</sub>e<sup>it<sub>n</sub></sup>. In this image, black=0, green=pi, red=2pi. In the outermost part of this image, we've iterated twice (n=2), and we can see that the phase circles twice around (i.e. for a total of 4pi). The first visible band shows the phase winding around four times times, the next eight, then sixteen. 
+
+![phase](./phase.png)  
+
+
+That is, when we've iterated until  
+
+$`|z_n| > R`$
+
+ we look at the phase of $`t_n`$ of $`z_n = r_n e^{it_n}`$. In this image, black=0, green=pi, red=2pi. In the outermost part of this image, we've iterated twice (n=2), and we can see that the phase circles twice around (i.e. for a total of 4pi). The first visible band shows the phase winding around four times times, the next eight, then sixteen. 
 
 
 We conclude:  **the phase winds around 2 raised to the power of n-1  times when it takes n iterations for a point to escape**.
@@ -100,6 +107,12 @@ Be sure to also check the bibliography on the [Potential Page](https://linas.org
 
 * * *
 
-[linas@linas.org](mailto:linas@linas.org)
+
+# technical note
+GitLab uses:
+* the Redcarpet Ruby library for [Markdown processing](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)
+* KaTeX to render [math written with the LaTeX syntax](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md), but [only subset](https://khan.github.io/KaTeX/function-support.html)
+
+
 
 [Return to Linas' Art Gallery](https://linas.org/art-gallery/index.html)

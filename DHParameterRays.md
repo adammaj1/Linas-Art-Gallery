@@ -16,9 +16,14 @@ We start this exploration with a picture showing **the final phase angle** when 
   
 That is, when we've iterated until  
 
-$`|z_n| > R`$
+$`|z_n| > R`$  
 
- we look at the phase of $`t_n`$ of $`z_n = r_n e^{it_n}`$. In this image, black=0, green=pi, red=2pi. In the outermost part of this image, we've iterated twice (n=2), and we can see that the phase circles twice around (i.e. for a total of 4pi). The first visible band shows the phase winding around four times times, the next eight, then sixteen. 
+we look at the phase $`t_n`$ of 
+ 
+$`z_n = r_n e^{it_n}`$. 
+
+
+In this image, black=0, green=pi, red=2pi. In the outermost part of this image, we've iterated twice (n=2), and we can see that the phase circles twice around (i.e. for a total of 4pi). The first visible band shows the phase winding around four times times, the next eight, then sixteen. 
 
 
 We conclude:  **the phase winds around 2 raised to the power of n-1  times when it takes n iterations for a point to escape**.

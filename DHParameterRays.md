@@ -8,9 +8,12 @@
 ## the final phase angle
 We start this exploration with a picture showing **the final phase angle** when an iterated point finally escapes.  
 
+
 ![phase](./phase.png)  
 
 
+  
+  
 That is, when we've iterated until  
 
 $`|z_n| > R`$
@@ -105,7 +108,7 @@ Rays in the vicinity of the n=2 bud. [![](./html/Douady Hubbard Parameter Rays_f
 
 Be sure to also check the bibliography on the [Potential Page](https://linas.org/art-gallery/escape/ray.html) for more details.
 
-* * *
+
 
 
 # technical note

@@ -58,7 +58,7 @@ Compare with:
 
 ### final phase after fixed number of iterations without bailout test 
 
-There is no such image in Linas gallery, but I think it can be there
+There is no such image in Linas gallery, but I think it could be there
 
 ![](phase_f.gif)  
 
@@ -72,6 +72,7 @@ compare it with
 * [Formation of Mandelbrot set](https://christopherolah.wordpress.com/tag/sage/) by Christopher Olah
 * [Phase Angle Shading](http://www.fractalforums.com/index.php?action=gallery;sa=view;id=20141) : Using phase angle of z after it has escaped to shade the image rather than the number of iterations needed for z to escape. by wes
 * [Mandelbrot function ](http://www.quadibloc.com/math/mbint.htm) by John J. G. Savard
+* [algorithm 9 : zeros of qn(c) from program Mandel by WOlf Jung](https://en.wikibooks.org/wiki/Fractals/mandel#algorithm_9_:_zeros_of_qn.28c.29)
 * [Mandel image by GONZALO E. MENA](https://gomena.github.io/gifs/fractals1/) where at each iteration (frame of the gif) different colors correspond to the angle of the iterations at each point
 
 Note 2 differences

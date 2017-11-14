@@ -168,3 +168,10 @@ This project is licensed under the  Creative Commons Attribution-ShareAlike 4.0 
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
+
+# technical note
+GitLab uses:
+* the Redcarpet Ruby library for [Markdown processing](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)
+* KaTeX to render [math written with the LaTeX syntax](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md), but [only subset](https://khan.github.io/KaTeX/function-support.html)
+
+

@@ -57,7 +57,7 @@ Phase: color is proportional to angle in turne of last Z. Level sets ( bands) of
 
 There is no such image in Linas gallery, but I think it can be there
 
-![](f150.gif)  
+![](a150.gif)  
 
 Image was made with 
 * [phase_f.c](phase_f.c)

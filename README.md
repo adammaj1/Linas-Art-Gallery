@@ -52,6 +52,9 @@ Phase: color is proportional to angle in turne of last Z. Level sets ( bands) of
 
 ![phase](./phase.png)
 
+Compare with:
+* [ External angles in the Mandelbrot set: the work of Douady and Hubbard. by Professor Douglas C. Ravenel](https://web.math.rochester.edu/people/faculty/doug/oldcourses/215s98/lecture10.html)
+* [Mandelbrot set decomposition](http://fraktal.republika.pl/mset_decomposition.html)
 
 ### final phase after fixed number of iterations without bailout test 
 
@@ -66,6 +69,9 @@ Image was made with
 In the right up corner each frame one can see a number wich shows maximal number of iterations for this frame.
 
 compare it with 
+* [Formation of Mandelbrot set](https://christopherolah.wordpress.com/tag/sage/) by Christopher Olah
+* [Phase Angle Shading](http://www.fractalforums.com/index.php?action=gallery;sa=view;id=20141) : Using phase angle of z after it has escaped to shade the image rather than the number of iterations needed for z to escape. by wes
+* [Mandelbrot function ](http://www.quadibloc.com/math/mbint.htm) by John J. G. Savard
 * [Mandel image by GONZALO E. MENA](https://gomena.github.io/gifs/fractals1/) where at each iteration (frame of the gif) different colors correspond to the angle of the iterations at each point
 
 Note 2 differences

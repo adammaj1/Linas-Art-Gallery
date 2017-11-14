@@ -47,12 +47,27 @@ Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial 
 * Iteration Max = 400
 
 
-
+### Phase
 Phase: color is proportional to angle in turne of last Z. Level sets ( bands) of escape time  are visible
 
 ![phase](./phase.png)
 
 
+### final phase after fixed number of iterations without bailout test 
+
+![](f150.gif)  
+
+Image was made with 
+* [phase_f.c](phase_f.c)
+* [f.sh](f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
+
+In the right up corner each frame one can see a number wich shows maximal number of iterations for this frame.
+
+compare it with 
+* [Mandel image by GONZALO E. MENA](https://gomena.github.io/gifs/fractals1/) where at each iteration (frame of the gif) different colors correspond to the angle of the iterations at each point
+
+
+### Winding
 Winding: color is proportional to winding number of the map 
 
 ![winding](./winding.png)

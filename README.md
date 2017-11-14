@@ -55,6 +55,8 @@ Phase: color is proportional to angle in turne of last Z. Level sets ( bands) of
 
 ### final phase after fixed number of iterations without bailout test 
 
+There is no such image in Linas gallery, but I think it can be there
+
 ![](f150.gif)  
 
 Image was made with 
@@ -66,6 +68,9 @@ In the right up corner each frame one can see a number wich shows maximal number
 compare it with 
 * [Mandel image by GONZALO E. MENA](https://gomena.github.io/gifs/fractals1/) where at each iteration (frame of the gif) different colors correspond to the angle of the iterations at each point
 
+Note 2 differences
+* in my image exterior comes black not white as in Gonzalo image
+* in my image ther is no black part near center of main cardioid. Such structure can be seen on other images. 
 
 ### Winding
 Winding: color is proportional to winding number of the map 

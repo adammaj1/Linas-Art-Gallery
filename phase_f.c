@@ -6,6 +6,10 @@
   " at each iteration (frame of the gif) different colors correspond to the angle of the iterations at each point "
   GONZALO E. MENA
   
+  note 2 differences
+  * in my image exterior comes black not white as in Gonzalo image
+  * in my image ther is no black part near center of main cardioid. Such structure can be seen on other images. 
+  
   
    c console program:
    

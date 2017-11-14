@@ -139,6 +139,45 @@ void GiveGrayColor(double position , int k, unsigned char A[])
 }
 
 
+void GiveLinasColor(double position , int k, unsigned char c[])
+{
+  /* based on the code by Linas Vepstas January 16 1994 : void make_cmap (void) */
+
+   
+  int i;
+  int iMax = 240;
+  i=(int)(iMax-1)*position;  
+  c[0] = c[1] = c[2] = 0;
+  /* set up a default look up table */
+  /* ramp up to blue */
+  if (i<60) {
+    c[k] = 0;
+    c[k+1] = 0;
+    c[k+2] = (unsigned char) i*3;
+  }
+  /* ramp down from blue, up to green */
+  if (i>=60 && i<120) {
+    c[k] = 0;
+    c[k+1] = (unsigned char) (i-60)*3;
+    c[k+2] = (unsigned char) (120-i)*3;
+  }
+  /* ramp from green to yellow */
+  if (i>=120 && i<180) {
+    /* vlt[i].r = (char) (((i-120)*7) / 2); */
+    c[k] = (unsigned char) (210 - (7*(180-i)*(180-i)) / 120);
+    c[k+1] = (unsigned char) (210 -i/4);
+    c[k+2] = 0;
+  }
+  /* ramp from yellow to red (pink) */
+  if (i>=180 && i<iMax) {
+    c[k] = (unsigned char) (210 + (3*(i-180))/4);
+    c[k+1] = (unsigned char) (510 - 2*i);
+    c[k+2] = (unsigned char) (i-180)/3;
+  }
+   
+}
+
+
 void ColorPixel(int iColor, int k, unsigned char A[])
 {
   switch (iColor)
@@ -208,7 +247,8 @@ int ComputeAndSavePixelColor(int iX, int iY){
     Z=Z*Z+C; // forward iteration 
   
   tf =  GiveTurn(Z); // compute angle in turns of final z = final turn = tf
-  GiveGrayColor(tf,k,data);  // color pixel proportionaly to tf
+  //GiveGrayColor(tf,k,data);  // color pixel proportionaly to tf
+  GiveLinasColor(tf, k, data);
   	
   return 0;
 }

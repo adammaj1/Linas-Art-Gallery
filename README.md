@@ -60,11 +60,11 @@ Compare with:
 
 There is no such image in Linas gallery, but I think it can be there
 
-![](a150.gif)  
+![](phase_f.gif)  
 
 Image was made with 
 * [phase_f.c](phase_f.c)
-* [f.sh](f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
+* [phase_f.sh](phase_f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
 
 In the right up corner each frame one can see a number wich shows maximal number of iterations for this frame.
 

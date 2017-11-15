@@ -76,18 +76,31 @@ Image was made with
 
 In the right up corner each frame one can see a number wich shows maximal number of iterations for this frame.
 
+
+Explanation:
+* [algorithm 9 : zeros of qn(c) from program Mandel by WOlf Jung](https://en.wikibooks.org/wiki/Fractals/mandel#algorithm_9_:_zeros_of_qn.28c.29)
+
+
 compare it with 
 * [Formation of Mandelbrot set](https://christopherolah.wordpress.com/tag/sage/) by Christopher Olah
 * [Phase Angle Shading](http://www.fractalforums.com/index.php?action=gallery;sa=view;id=20141) : Using phase angle of z after it has escaped to shade the image rather than the number of iterations needed for z to escape. by wes
 * [Mandelbrot function ](http://www.quadibloc.com/math/mbint.htm) by John J. G. Savard
-* [algorithm 9 : zeros of qn(c) from program Mandel by WOlf Jung](https://en.wikibooks.org/wiki/Fractals/mandel#algorithm_9_:_zeros_of_qn.28c.29)
 * [Mandel image by GONZALO E. MENA](https://gomena.github.io/gifs/fractals1/) where at each iteration (frame of the gif) different colors correspond to the angle of the iterations at each point
 
 Note 2 differences
 * in my image exterior comes black not white as in Gonzalo image
-* in my image ther is no black part near center of main cardioid. Such structure can be seen on other images. 
+* in my image ther is no black part near center of main cardioid. Such structure can be seen on other images.
+
+See:
+* the differencesc between odd and even frames
+
+
+
+ 
 
 ### Winding
+
+(to do !!!!)
 
 How to remove from [phase image](phase.png): 
 * level sets of escape time
@@ -122,7 +135,7 @@ and that is all.
 
 
 
-![winding](./html/Douady Hubbard Parameter Rays_files/winding-small.gif)
+![winding - original image ](./html/Douady Hubbard Parameter Rays_files/winding-small.gif)
 
 
 Small defects are barely visible in the image above, but are prominent in the closeups. 

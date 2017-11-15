@@ -83,7 +83,10 @@ Explanation:
 
 compare it with 
 * [Formation of Mandelbrot set](https://christopherolah.wordpress.com/tag/sage/) by Christopher Olah
+* [Analysis of critical point of z→z²+c ](https://commons.wikimedia.org/wiki/File:Mandelbrot-Iterate-01.jpg?uselang=en) by [Georg-Johann Lay](https://de.wikipedia.org/wiki/Benutzer:Georg-Johann/Mathematik#Visualising_complex_functions)
+* [Mandelbrot fractal: How is it possible? from math.stackexchange](https://math.stackexchange.com/questions/32062/mandelbrot-fractal-how-is-it-possible)
 * [Phase Angle Shading](http://www.fractalforums.com/index.php?action=gallery;sa=view;id=20141) : Using phase angle of z after it has escaped to shade the image rather than the number of iterations needed for z to escape. by wes
+* [ Creating the Mandelbrot set](http://web.ncf.ca/fs039/mp/documents/ptr/) by Martin Pergler
 * [Mandelbrot function ](http://www.quadibloc.com/math/mbint.htm) by John J. G. Savard
 * [Mandel image by GONZALO E. MENA](https://gomena.github.io/gifs/fractals1/) where at each iteration (frame of the gif) different colors correspond to the angle of the iterations at each point
 
@@ -113,8 +116,7 @@ Steps
 * pick c which is your pixel.  set integer cnt=0
 * iterate $`z^2+c`$ until $`|z| > escape_radius`$.  Call this the "final z"  . Count the number of iterations until escape. Call this N.
 * Use phase(final_z)  as the color scheme at pixel c.  This gives the very first picture.
-* For each iteration
-  * adjust so that phase(z) lies between 0 and 2pi.
+* For each iteration adjust cnt so that phase(z) lies between 0 and 2pi.
   * if (phase(z) > pi) then cnt+=1;  because the next iteration will cause the phase to go over 2pi. 
   * set  cnt = 2*cnt; because the next iteration is doubling the angle.
 * Repeat until escape.

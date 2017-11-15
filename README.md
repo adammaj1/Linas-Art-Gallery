@@ -48,9 +48,17 @@ Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial 
 
 
 ### Phase
-Phase: color is proportional to angle in turne of last Z. Level sets ( bands) of escape time  are visible
+Phase: color is proportional to angle ( phase) in turns of last Z ( final Z). Level sets ( bands) of escape time  are visible
 
 ![phase](./phase.png)
+
+Steps
+* pick c which is your pixel
+* iterate z^2+c until |z| > escape_radius.  Call this the "final z"  . Count the number of iterations until escape. Call this N.
+* Use phase(final_z)  as the color scheme at pixel c.  This gives the phase picture.
+
+Clearly, you can see bands encircling the m-set, and each band winds twice as often as the one before. 
+
 
 Compare with:
 * [ External angles in the Mandelbrot set: the work of Douady and Hubbard. by Professor Douglas C. Ravenel](https://web.math.rochester.edu/people/faculty/doug/oldcourses/215s98/lecture10.html)
@@ -80,7 +88,40 @@ Note 2 differences
 * in my image ther is no black part near center of main cardioid. Such structure can be seen on other images. 
 
 ### Winding
-Winding: color is proportional to winding number of the map 
+
+How to remove from phase image: 
+* level sets of escape time
+* doubling of bands ...
+
+
+winding number = cnt (integer)
+
+
+Steps
+* pick c which is your pixel.  set integer cnt=0
+* iterate z^2+c until |z| > escape_radius.  Call this the "final z"  . Count the number of iterations until escape. Call this N.
+* Use phase(final_z)  as the color scheme at pixel c.  This gives the very first picture.
+* For each iteration
+  * adjust so that phase(z) lies between 0 and 2pi.
+  * if (phase(z) > pi) then cnt+=1;  because the next iteration will cause the phase to go over 2pi. 
+  * set  cnt = 2*cnt; because the next iteration is doubling the angle.
+*Repeat until escape.
+
+$`angle(c) =  (2 pi * cnt + phase(final_z))  / 2^N`$
+
+Note that if N is large, then phase(final_z)/2^N is small, and you can  ignore it. then one simply has:
+
+$`angle( at c) =  2 pi * cnt / 2^N`$
+
+and that is all.
+
+
+
+
+
+
+
+
 
 ![winding](./winding.png)
 

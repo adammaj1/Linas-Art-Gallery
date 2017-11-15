@@ -89,7 +89,7 @@ Note 2 differences
 
 ### Winding
 
-How to remove from phase image: 
+How to remove from [phase image](phase.png): 
 * level sets of escape time
 * doubling of bands ...
 
@@ -99,7 +99,7 @@ winding number = cnt (integer)
 
 Steps
 * pick c which is your pixel.  set integer cnt=0
-* iterate z^2+c until |z| > escape_radius.  Call this the "final z"  . Count the number of iterations until escape. Call this N.
+* iterate $`z^2+c`$ until $`|z| > escape_radius`$.  Call this the "final z"  . Count the number of iterations until escape. Call this N.
 * Use phase(final_z)  as the color scheme at pixel c.  This gives the very first picture.
 * For each iteration
   * adjust so that phase(z) lies between 0 and 2pi.

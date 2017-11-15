@@ -91,10 +91,9 @@ Note 2 differences
 
 How to remove from [phase image](phase.png): 
 * level sets of escape time
-* doubling of bands ...
+* doubling of bands inside level sets 
 
-
-winding number = cnt (integer)
+Use : winding number. It is integer value called   cnt
 
 
 Steps
@@ -105,7 +104,7 @@ Steps
   * adjust so that phase(z) lies between 0 and 2pi.
   * if (phase(z) > pi) then cnt+=1;  because the next iteration will cause the phase to go over 2pi. 
   * set  cnt = 2*cnt; because the next iteration is doubling the angle.
-*Repeat until escape.
+* Repeat until escape.
 
 $`angle(c) =  (2 pi * cnt + phase(final_z))  / 2^N`$
 
@@ -123,7 +122,7 @@ and that is all.
 
 
 
-![winding](./winding.png)
+![winding](./html/Douady Hubbard Parameter Rays_files/winding-small.gif)
 
 
 Small defects are barely visible in the image above, but are prominent in the closeups. 

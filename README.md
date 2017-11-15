@@ -54,7 +54,7 @@ Phase: color is proportional to angle ( phase) in turns of last Z ( final Z). Le
 
 Steps
 * pick c which is your pixel
-* iterate z^2+c until |z| > escape_radius.  Call this the "final z"  . Count the number of iterations until escape. Call this N.
+* iterate $`z^2+c`$ until $`|z| > EscapeRadius`$.  Call this the "final z"  . Count the number of iterations until escape. Call this N.
 * Use phase(final_z)  as the color scheme at pixel c.  This gives the phase picture.
 
 Clearly, you can see bands encircling the m-set, and each band winds twice as often as the one before. 

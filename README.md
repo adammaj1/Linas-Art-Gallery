@@ -136,6 +136,12 @@ $`angle(c) =  2 pi * cnt / 2^N`$
 and that is all.
 
 
+![ ](phase_cnt.png)
+
+It was made with:
+* [phase_cnt.c](phase_cnt.c)
+
+
 #### binary 
 
 The 'lining up' and doubling for each iteration allows us to use binary numbers to identify each region. 

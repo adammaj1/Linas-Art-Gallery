@@ -165,7 +165,7 @@ Basically, by looking at the first picture, we can see that we can match up the 
 
 The algorithm we used here is the simplest and fastest possible:
 * For each parameter c, and each iteration k, we compute the phase $`t_k`$ of $`z_k = r^ke^{it_k}`$. We use arctan to compute the phase. 
-* Since arctan always uses one branch, we try to track period doubling by comparing tk to tk-1. 
+* Since arctan always uses one branch, we try to track period doubling by comparing $`t_k`$ to $`t_{k-1}`$. 
 * We know that tk should be increasing usually; and we can use this to count the winding number. 
 
 This algorithm is pretty good; its fast, its simple, but is not perfect, and it has a few small defects. 

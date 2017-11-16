@@ -9,7 +9,8 @@ See:
 * md files 
   * [DHParemeterRays](./DHParameterRays.md)
 * [Linas Vepstas C programs](http://fraktal.republika.pl/linas.html)
-* Images
+* Images: static (png) and animated (gif)
+* c and sh files 
 
 
 ## [Smooth Shading for the Mandelbrot Exterior](http://linas.org/art-gallery/escape/smooth.html)
@@ -111,9 +112,11 @@ How to remove from [phase image](phase.png):
 
 Names: 
 * winding number ( external angle)
-* cnt = counter is integer value 
+* cnt = counter, it is an integer value 
 * 
 
+
+#### cnt
 
 Steps
 * pick c which is your pixel.  set integer cnt=0
@@ -133,11 +136,15 @@ $`angle( at c) =  2 pi * cnt / 2^N`$
 and that is all.
 
 
-
+#### binary 
 
 The 'lining up' and doubling for each iteration allows us to use binary numbers to identify each region. 
 
-For the outermost region, we can use 0 to denote the upper half, and 1 to denote the lower half. Then, for each subsequent band, we can use:
+For the outermost region, we can use:
+* 0 to denote the upper half
+* 1 to denote the lower half. 
+
+Then, for each subsequent band, we can use:
 * 0 if the band lines up to angles less than pi in the previous band
 * 1 if it lines up with angles greater than pi in the previous band. 
 
@@ -147,9 +154,21 @@ If we put a decimal point in front of the sequence, then we have a binary expans
 
 
 
-Lets look a this another way: for any real number 0 < x < 1 write down its binary expansion. Then use the digits of the binary expansion to pick one's way down through each band. After an infinite number of steps, we've reached a unique point at the surface of the M-set. For every number, there's a point at the surface. 
+Lets look a this another way: for any real number 0 < x < 1 write down its binary expansion. 
 
-We use the 'lining-up' or period-doubling to subtract out its effects, and generate the winding number shown here.  Basically, by looking at the first picture, we can see that we can match up the colors by totaling up the winding number as the phase wraps around, and then dividing by 2n-1 for each band. The algorithm we used here is the simplest and fastest possible. For each parameter c, and each iteration k, we compute the phase tk of zk = rkeitk. We use arctan to compute the phase. Since arctan always uses one branch, we try to track period doubling by comparing tk to tk-1. We know that tk should be increasing usually; and we can use this to count the winding number. This algorithm is pretty good; its fast, its simple, but is not perfect, and it has a few small defects. 
+Then use the digits of the binary expansion to pick one's way down through each band. After an infinite number of steps, 
+we've reached a unique point at the surface of the M-set. For every number, there's a point at the surface. 
+
+We use the 'lining-up' or period-doubling to subtract out its effects, and generate the winding number shown here.  
+Basically, by looking at the first picture, we can see that we can match up the colors by totaling up the winding number as the phase wraps around, and then dividing by 2n-1 for each band. 
+
+
+The algorithm we used here is the simplest and fastest possible:
+* For each parameter c, and each iteration k, we compute the phase $`t_k`$ of $`z_k = r^ke^(it_k)`$. We use arctan to compute the phase. 
+* Since arctan always uses one branch, we try to track period doubling by comparing tk to tk-1. 
+* We know that tk should be increasing usually; and we can use this to count the winding number. 
+
+This algorithm is pretty good; its fast, its simple, but is not perfect, and it has a few small defects. 
 
 
 

@@ -274,9 +274,12 @@ double GiveExternalAngle(complex C)
        	if (cabs(Z) > EscapeRadius) break;
    }
 
-    // Return a valu between 0.0 and 1.0
-    if (i == IterationMax) return -1;
-      else return  cnt / pow(2.0, i+1);
+
+    phase = GiveTurn(Z); 
+    
+    // return phase + cnt/pow(2.0, i+1); // 1. level sets visible , doubling visible
+    // return cnt/pow(2.0, i+1); // 2. 
+    return (2.0*phase + cnt)/pow(2.0, i+1); // 3. 
 
     
 } 
@@ -299,8 +302,7 @@ int ComputeAndSavePixelColor(int iX, int iY){
   t = GiveExternalAngle(C);
   
   
-  if (t<0.0) {data[k]=255; data[k+1]=255; data[k+2]=255;}   // interior 
-  	else GiveLinasColor(t , k,  data); // exterior
+  GiveLinasColor(t , k,  data); //
       
     
  

@@ -65,38 +65,6 @@ Compare with:
 * [ External angles in the Mandelbrot set: the work of Douady and Hubbard. by Professor Douglas C. Ravenel](https://web.math.rochester.edu/people/faculty/doug/oldcourses/215s98/lecture10.html)
 * [Mandelbrot set decomposition](http://fraktal.republika.pl/mset_decomposition.html)
 
-### final phase after fixed number of iterations without bailout test 
-
-There is no such image in Linas gallery, but I think it could be there
-
-![](phase_f.gif)  
-
-Image was made with 
-* [phase_f.c](phase_f.c)
-* [phase_f.sh](phase_f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
-
-In the right up corner each frame one can see a number wich shows maximal number of iterations for this frame.
-
-
-Explanation:
-* [algorithm 9 : zeros of qn(c) from program Mandel by WOlf Jung](https://en.wikibooks.org/wiki/Fractals/mandel#algorithm_9_:_zeros_of_qn.28c.29)
-
-
-compare it with 
-* [Formation of Mandelbrot set](https://christopherolah.wordpress.com/tag/sage/) by Christopher Olah
-* [Analysis of critical point of z→z²+c ](https://commons.wikimedia.org/wiki/File:Mandelbrot-Iterate-01.jpg?uselang=en) by [Georg-Johann Lay](https://de.wikipedia.org/wiki/Benutzer:Georg-Johann/Mathematik#Visualising_complex_functions)
-* [Mandelbrot fractal: How is it possible? from math.stackexchange](https://math.stackexchange.com/questions/32062/mandelbrot-fractal-how-is-it-possible)
-* [Phase Angle Shading](http://www.fractalforums.com/index.php?action=gallery;sa=view;id=20141) : Using phase angle of z after it has escaped to shade the image rather than the number of iterations needed for z to escape. by wes
-* [ Creating the Mandelbrot set](http://web.ncf.ca/fs039/mp/documents/ptr/) by Martin Pergler
-* [Mandelbrot function ](http://www.quadibloc.com/math/mbint.htm) by John J. G. Savard
-* [Mandel image by GONZALO E. MENA](https://gomena.github.io/gifs/fractals1/) where at each iteration (frame of the gif) different colors correspond to the angle of the iterations at each point
-
-Note 2 differences
-* in my image exterior comes black not white as in Gonzalo image
-* in my image ther is no black part near center of main cardioid. Such structure can be seen on other images.
-
-See:
-* the differencesc between odd and even frames
 
 
 
@@ -116,7 +84,7 @@ Names:
 * 
 
 
-#### cnt
+#### cnt ( )
 
 Steps
 * pick c which is your pixel.  set integer cnt=0
@@ -142,7 +110,7 @@ It was made with:
 * [phase_cnt.c](phase_cnt.c)
 
 
-#### binary 
+#### simple algorithm  (binary)
 
 The 'lining up' and doubling for each iteration allows us to use binary numbers to identify each region. 
 
@@ -184,27 +152,68 @@ This algorithm is pretty good; its fast, its simple, but is not perfect, and it 
 
 Small defects are barely visible in the image above, but are prominent in the closeups. 
 
-![](./html/Douady Hubbard Parameter Rays_files/defect-bud2-small.gif)
-![](./html/Douady Hubbard Parameter Rays_files/defect-bud2-small.gif)
+![bud2](./html/Douady Hubbard Parameter Rays_files/defect-bud2-small.gif)
+![bud3](./html/Douady Hubbard Parameter Rays_files/defect-bud3-small.gif)
 
-#### correct
+#### correct algorithm
 
-![](./html/Douady Hubbard Parameter Rays_files/correct-bud2-small.gif)
+
 
 Here's an example of an 'almost' correct algorithm. The idea here is to try to step/integrate along lines of constant phase, moving away from the M-set. We use the vector Dm (employing the notation introduced on the Potential Page) as a predictor to step one iteration at a time away from the M-set. The explicit algorithm is this: Define a sequence {ck} with c0 = c and k<n, where n is the number of times that c is iterated until it reaches some (large) escape radius. Then try
 
-ck+1 = ck - 2Dmk/|Dmk|2
+$`c_{k+1} = c_k - 2Dmk/|Dmk|2`$
 
-where Dmk is the derivative of the fractional iteration count m at ck. With each ck, we iterate one less time, (i.e. we iterate n-k times). Then the phase of cn seems to be an approximation to the true phase. In particular, it is free of the discontinuities plaguing the simple algorithm.  
- Notice how much prettier, and more visually correct these images are, compared to their equivalents above. 
+where Dmk is the derivative of the fractional iteration count m at ck. 
+
+With each ck, we iterate one less time, (i.e. we iterate n-k times). Then the phase of cn seems to be an approximation to the true phase. In particular, it is free of the discontinuities plaguing the simple algorithm.  
+
+Notice how much prettier, and more visually correct these images are, compared to their equivalents above. 
  
- 
-![](./html/Douady Hubbard Parameter Rays_files/correct-bud3-small.gif) 
+![bud2](./html/Douady Hubbard Parameter Rays_files/correct-bud2-small.gif)
+![bud3](./html/Douady Hubbard Parameter Rays_files/correct-bud3-small.gif)  
+
 However, this algorithm has some serious spread-out error terms, as shown here.  This image shows the difference between the exact phase, and our approximation. The image is colored so that red represents differences of 2 percent or more between the approximate and the true phase. Although 2 percent may seem small, it is hopelessly large when used for tracing rays. 
 
 
 
 ![](./html/Douady Hubbard Parameter Rays_files/algo-diff-small.gif)
+
+
+
+
+### final phase after fixed number of iterations without bailout test 
+
+There is no such image in Linas gallery, but I think it could be there
+
+![](phase_f.gif)  
+
+Image was made with 
+* [phase_f.c](phase_f.c)
+* [phase_f.sh](phase_f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
+
+In the right up corner each frame one can see a number wich shows maximal number of iterations for this frame.
+
+
+Explanation:
+* [algorithm 9 : zeros of qn(c) from program Mandel by WOlf Jung](https://en.wikibooks.org/wiki/Fractals/mandel#algorithm_9_:_zeros_of_qn.28c.29)
+
+
+compare it with 
+* [Formation of Mandelbrot set](https://christopherolah.wordpress.com/tag/sage/) by Christopher Olah
+* [Analysis of critical point of z→z²+c ](https://commons.wikimedia.org/wiki/File:Mandelbrot-Iterate-01.jpg?uselang=en) by [Georg-Johann Lay](https://de.wikipedia.org/wiki/Benutzer:Georg-Johann/Mathematik#Visualising_complex_functions)
+* [Mandelbrot fractal: How is it possible? from math.stackexchange](https://math.stackexchange.com/questions/32062/mandelbrot-fractal-how-is-it-possible)
+* [Phase Angle Shading](http://www.fractalforums.com/index.php?action=gallery;sa=view;id=20141) : Using phase angle of z after it has escaped to shade the image rather than the number of iterations needed for z to escape. by wes
+* [ Creating the Mandelbrot set](http://web.ncf.ca/fs039/mp/documents/ptr/) by Martin Pergler
+* [Mandelbrot function ](http://www.quadibloc.com/math/mbint.htm) by John J. G. Savard
+* [Mandel image by GONZALO E. MENA](https://gomena.github.io/gifs/fractals1/) where at each iteration (frame of the gif) different colors correspond to the angle of the iterations at each point
+
+Note 2 differences
+* in my image exterior comes black not white as in Gonzalo image
+* in my image ther is no black part near center of main cardioid. Such structure can be seen on other images.
+
+See:
+* the differencesc between odd and even frames
+
 
 # Getting Started
 

@@ -120,7 +120,7 @@ Names:
 
 Steps
 * pick c which is your pixel.  set integer cnt=0
-* iterate $`z^2+c`$ until $`|z| > escape_radius`$.  Call this the "final z"  . Count the number of iterations until escape. Call this N.
+* iterate $`z^2+c`$ until $`|z| > EscapeRadius`$.  Call this the "final z"  . Count the number of iterations until escape. Call this N.
 * Use phase(final_z)  as the color scheme at pixel c.  This gives the very first picture.
 * For each iteration adjust cnt so that phase(z) lies between 0 and 2pi.
   * if (phase(z) > pi) then cnt+=1;  because the next iteration will cause the phase to go over 2pi. 

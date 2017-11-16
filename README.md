@@ -184,6 +184,27 @@ This algorithm is pretty good; its fast, its simple, but is not perfect, and it 
 
 Small defects are barely visible in the image above, but are prominent in the closeups. 
 
+![](./html/Douady Hubbard Parameter Rays_files/defect-bud2-small.gif)
+![](./html/Douady Hubbard Parameter Rays_files/defect-bud2-small.gif)
+
+#### correct
+
+![](./html/Douady Hubbard Parameter Rays_files/correct-bud2-small.gif)
+
+Here's an example of an 'almost' correct algorithm. The idea here is to try to step/integrate along lines of constant phase, moving away from the M-set. We use the vector Dm (employing the notation introduced on the Potential Page) as a predictor to step one iteration at a time away from the M-set. The explicit algorithm is this: Define a sequence {ck} with c0 = c and k<n, where n is the number of times that c is iterated until it reaches some (large) escape radius. Then try
+
+ck+1 = ck - 2Dmk/|Dmk|2
+
+where Dmk is the derivative of the fractional iteration count m at ck. With each ck, we iterate one less time, (i.e. we iterate n-k times). Then the phase of cn seems to be an approximation to the true phase. In particular, it is free of the discontinuities plaguing the simple algorithm.  
+ Notice how much prettier, and more visually correct these images are, compared to their equivalents above. 
+ 
+ 
+![](./html/Douady Hubbard Parameter Rays_files/correct-bud3-small.gif) 
+However, this algorithm has some serious spread-out error terms, as shown here.  This image shows the difference between the exact phase, and our approximation. The image is colored so that red represents differences of 2 percent or more between the approximate and the true phase. Although 2 percent may seem small, it is hopelessly large when used for tracing rays. 
+
+
+
+![](./html/Douady Hubbard Parameter Rays_files/algo-diff-small.gif)
 
 # Getting Started
 

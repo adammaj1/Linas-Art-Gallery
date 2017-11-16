@@ -154,7 +154,7 @@ Then, for each subsequent band, we can use:
 * 0 if the band lines up to angles less than pi in the previous band
 * 1 if it lines up with angles greater than pi in the previous band. 
 
-Thus, any sequence of binary digits can be used to walk us towards the M-set, with each digit determining which fork should be taken. 
+Thus, [any sequence of binary digits can be used to walk us towards the M-set](http://www.fractalforums.com/animations-showcase-(rate-my-short-animation)/binary-decomposition-and-external-angles/), with each digit determining which fork should be taken. 
 
 If we put a decimal point in front of the sequence, then we have a binary expansion of a real number between 0 and 1. We refer to this number, somewhat incorrectly, as the winding number.
 

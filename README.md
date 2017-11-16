@@ -127,11 +127,11 @@ Steps
   * set  cnt = 2*cnt; because the next iteration is doubling the angle.
 * Repeat until escape.
 
-$`angle(c) =  (2 pi * cnt + phase(final_z))  / 2^N`$
+$`angle(c) =  (2 pi * cnt + phase(z_{final}))  / 2^N`$
 
 Note that if N is large, then phase(final_z)/2^N is small, and you can  ignore it. then one simply has:
 
-$`angle( at c) =  2 pi * cnt / 2^N`$
+$`angle(c) =  2 pi * cnt / 2^N`$
 
 and that is all.
 
@@ -164,7 +164,7 @@ Basically, by looking at the first picture, we can see that we can match up the 
 
 
 The algorithm we used here is the simplest and fastest possible:
-* For each parameter c, and each iteration k, we compute the phase $`t_k`$ of $`z_k = r^ke^(it_k)`$. We use arctan to compute the phase. 
+* For each parameter c, and each iteration k, we compute the phase $`t_k`$ of $`z_k = r^ke^{it_k}`$. We use arctan to compute the phase. 
 * Since arctan always uses one branch, we try to track period doubling by comparing tk to tk-1. 
 * We know that tk should be increasing usually; and we can use this to count the winding number. 
 

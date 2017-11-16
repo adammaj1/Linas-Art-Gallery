@@ -102,7 +102,7 @@ See:
 
  
 
-### Winding
+### Winding number or the external angle
 
 (to do !!!!)
 
@@ -120,16 +120,16 @@ Names:
 
 Steps
 * pick c which is your pixel.  set integer cnt=0
-* iterate $`z^2+c`$ until $`|z| > EscapeRadius`$.  Call this the "final z"  . Count the number of iterations until escape. Call this N.
-* Use phase(final_z)  as the color scheme at pixel c.  This gives the very first picture.
-* For each iteration adjust cnt so that phase(z) lies between 0 and 2pi.
+* iterate $`z^2+c`$ until $`|z| > EscapeRadius`$.  Call this the $`z_{final}`$  . Count the number of iterations until escape. Call this N.
+* Use $`phase(z_{final})`$  as the color scheme at pixel c.  This gives [the phase picture](phase.png)
+* For each iteration adjust phase so that phase(z) lies between 0 and 2pi. Then 
   * if (phase(z) > pi) then cnt+=1;  because the next iteration will cause the phase to go over 2pi. 
   * set  cnt = 2*cnt; because the next iteration is doubling the angle.
 * Repeat until escape.
 
 $`angle(c) =  (2 pi * cnt + phase(z_{final}))  / 2^N`$
 
-Note that if N is large, then phase(final_z)/2^N is small, and you can  ignore it. then one simply has:
+Note that if N is large, then $`phase(z_{final})/2^N`$ is small, and you can  ignore it. then one simply has:
 
 $`angle(c) =  2 pi * cnt / 2^N`$
 

@@ -12,8 +12,14 @@ See:
 * Images: static (png) and animated (gif)
 * c and sh files 
 
+# functions
+* atan function : [returns the principal arc tangent of x, in the interval [-pi/2,+pi/2] radians.](https://www.tutorialspoint.com/c_standard_library/c_function_atan.htm)
 
-## [Smooth Shading for the Mandelbrot Exterior](http://linas.org/art-gallery/escape/smooth.html)
+
+
+
+
+# [Smooth Shading for the Mandelbrot Exterior](http://linas.org/art-gallery/escape/smooth.html)
 
 Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
 * Rectangle part of 2D parameter plane: 
@@ -35,7 +41,7 @@ iter18-3e0: Color is proportional to [the renormalized, fractional iteration cou
 ![iter18-3e0](./iter18-3e0.png) 
 
 
-## [Douady Hubbard Parameter Rays](https://linas.org/art-gallery/escape/phase/phase.html)
+# [Douady Hubbard Parameter Rays](https://linas.org/art-gallery/escape/phase/phase.html)
 
 
 Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
@@ -48,7 +54,7 @@ Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial 
 * Iteration Max = 400
 
 
-### Phase
+## Phase
 Phase: color is proportional to angle ( phase) in turns of last Z ( final Z). Level sets ( bands) of escape time  are visible
 
 ![phase](./phase.png)
@@ -70,7 +76,7 @@ Compare with:
 
  
 
-### Winding number or the external angle
+## Winding number or the external angle
 
 (to do !!!!)
 
@@ -84,7 +90,7 @@ Names:
 * 
 
 
-#### cnt ( )
+### cnt ( )
 
 Steps
 * pick c which is your pixel.  set integer cnt=0
@@ -110,7 +116,7 @@ It was made with:
 * [phase_cnt.c](phase_cnt.c)
 
 
-#### simple algorithm  (binary)
+### simple algorithm  (binary)
 
 The 'lining up' and doubling for each iteration allows us to use binary numbers to identify each region. 
 
@@ -138,7 +144,7 @@ Basically, by looking at the first picture, we can see that we can match up the 
 
 
 The algorithm we used here is the simplest and fastest possible:
-* For each parameter c, and each iteration k, we compute the phase $`t_k = arctan(z_k)`$  where$`z_k = r^ke^{it_k}`$ 
+* For each parameter c, and each iteration k, we compute $`z_k = r^ke^{it_k}`$  and the phase $`t_k = arctan(z_k)`$  
 * Since arctan always uses one branch, we try to track period doubling by comparing $`t_k`$ to $`t_{k-1}`$ 
 * We know that tk should be increasing usually: $`t_{k-1} < t_k`$ ; and we can use this to count the winding number. 
 
@@ -155,7 +161,7 @@ Small defects are barely visible in the image above, but are prominent in the cl
 ![bud2](./html/Douady Hubbard Parameter Rays_files/defect-bud2-small.gif)
 ![bud3](./html/Douady Hubbard Parameter Rays_files/defect-bud3-small.gif)
 
-#### correct algorithm
+### correct algorithm
 
 
 
@@ -236,7 +242,7 @@ gcc image.c -lm -Wall
 
 I could not run new code ( 2000)
 
-### Installing
+## Installing
 
 A step by step series of examples that tell you have to get a development env running
 
@@ -254,7 +260,7 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-### Git
+# Git
 ```
 git init
 git remote add origin git@gitlab.com:adammajewski/LinasArtGallery_MandelbrotSet.git
@@ -264,54 +270,14 @@ git push -u origin master
 ```
 
 
-### HTML preview
+# HTML preview
 
 [GitHub & BitBucket HTML Preview](http://htmlpreview.github.io/?)
 
 
 
 
-## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [n](link) - description
-
-## Contributing
-
-Please read [CONTRIBUTING.md](link) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [name](link) for versioning. 
-
-## Authors
-
-* 
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 

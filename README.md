@@ -241,6 +241,34 @@ See:
 
 # Douady-Hubbard Potential
 
+## Potential
+
+```c
+// he Douady-Hubbard potential is just f = e-m log2 = 2-m
+  double potential = pow(2,-m);
+```
+
+Non-normalized potential : "f gets exponentially flat as it approaches the boundary of the M-set, and thus, it looks like a very blurry low-res picture of the M-set. Boring."
+
+![potential](potential.png)  
+
+
+Normalized potential : 
+
+```c
+m = m/IterationMax; // normalize = map to [0,1]
+```
+
+
+
+![potentialn](potentialn.png)  
+
+Images ware made with: 
+* [potential.c](potential.c)
+* [potentialn.c](potentialn.c)
+* [phase_f.sh](phase_f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
+
+
 ## Gradient of the potential
 
 

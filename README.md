@@ -1,3 +1,10 @@
+# TOC
+* [Smooth Shading for the Mandelbrot Exterior]()
+* [Douady Hubbard Parameter Rays]()
+
+
+
+
 # Project Title
 
 [Linas' Art Gallery](http://linas.org/art-gallery/index.html)
@@ -19,7 +26,10 @@ See:
 
 
 
-# [Smooth Shading for the Mandelbrot Exterior](http://linas.org/art-gallery/escape/smooth.html)
+# Smooth Shading for the Mandelbrot Exterior
+
+
+[Linas original page](http://linas.org/art-gallery/escape/smooth.html)
 
 Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
 * Rectangle part of 2D parameter plane: 
@@ -41,7 +51,9 @@ iter18-3e0: Color is proportional to [the renormalized, fractional iteration cou
 ![iter18-3e0](./iter18-3e0.png) 
 
 
-# [Douady Hubbard Parameter Rays](https://linas.org/art-gallery/escape/phase/phase.html)
+# Douady Hubbard Parameter Rays
+
+[Linas original page](https://linas.org/art-gallery/escape/phase/phase.html)
 
 
 Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
@@ -242,25 +254,35 @@ gcc image.c -lm -Wall
 
 I could not run new code ( 2000)
 
-## Installing
 
-A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
 
-```
-Give the example
-```
 
-And repeat
 
-```
-until finished
-```
 
-End with an example of getting some data out of the system or using it for a little demo
 
-# Git
+
+
+
+# Acknowledgments
+
+* Hat tip to anyone who's code was used
+* Inspiration
+* etc
+
+# License
+
+This project is licensed under the  Creative Commons Attribution-ShareAlike 4.0 International License - see the [LICENSE.md](LICENSE.md) file for details
+
+# technical notes
+GitLab uses:
+* the Redcarpet Ruby library for [Markdown processing](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)
+* KaTeX to render [math written with the LaTeX syntax](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md), but [only subset](https://khan.github.io/KaTeX/function-support.html)
+
+
+
+
+## Git
 ```
 git init
 git remote add origin git@gitlab.com:adammajewski/LinasArtGallery_MandelbrotSet.git
@@ -270,28 +292,7 @@ git push -u origin master
 ```
 
 
-# HTML preview
+## HTML preview
 
 [GitHub & BitBucket HTML Preview](http://htmlpreview.github.io/?)
-
-
-
-
-
-
-## License
-
-This project is licensed under the  Creative Commons Attribution-ShareAlike 4.0 International License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
-
-# technical note
-GitLab uses:
-* the Redcarpet Ruby library for [Markdown processing](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)
-* KaTeX to render [math written with the LaTeX syntax](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md), but [only subset](https://khan.github.io/KaTeX/function-support.html)
-
 

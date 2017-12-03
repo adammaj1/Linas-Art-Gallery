@@ -3,6 +3,8 @@
 * [Douady Hubbard Parameter Rays](README.md#douady-hubbard-parameter-rays)
   * [Phase](README.md#phase)
   * [Winding number or the external angle](README.md#winding-number-or-the-external-angle)
+* [Douady-Hubbard Potential]()
+ * [Gradient of the potential]()
 * [Prerequisites](README.md#prerequisites)
 * [Acknowledgments](README.md#acknowledgments)
 * [License](README.md#license)
@@ -237,7 +239,9 @@ Note 2 differences
 See:
 * the differencesc between odd and even frames
 
+# Douady-Hubbard Potential
 
+## Gradient of the potential
 
 
 

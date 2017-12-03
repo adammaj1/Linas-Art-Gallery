@@ -1,6 +1,6 @@
 # TOC
-* [Smooth Shading for the Mandelbrot Exterior]()
-* [Douady Hubbard Parameter Rays]()
+* [Smooth Shading for the Mandelbrot Exterior](README.md#smooth-shading-for-the-mandelbrot-exterior)
+* [Douady Hubbard Parameter Rays](README.md#douady-hubbard-parameter-rays)
 
 
 

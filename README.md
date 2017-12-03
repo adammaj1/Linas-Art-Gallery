@@ -4,7 +4,8 @@
   * [Phase](README.md#phase)
   * [Winding number or the external angle](README.md#winding-number-or-the-external-angle)
 * [Douady-Hubbard Potential]()
- * [Gradient of the potential]()
+  * [Potential](README.md#Potential)
+  * [Gradient of the potential](README.md#Gradient-of-the-potential)
 * [Prerequisites](README.md#prerequisites)
 * [Acknowledgments](README.md#acknowledgments)
 * [License](README.md#license)
@@ -271,7 +272,14 @@ Images ware made with:
 
 ## Gradient of the potential
 
+The gradient is more interesting. The gradient 2Df always points 'uphill':  
 
+2Df = f zn Dzn / |zn|2 log |zn|
+
+The picture below shows the modulus of the gradient.  Of course, it resembles a coronal discharge.  
+If one were to cut out a metal plate in the shape of an M-set, apply a high voltage to it, 
+it is exactly this that you would see, because it is the areas of high electric field (gradient) where the coronal ionization will occur. 
+Maybe make a chic lightning rod for the barn. 
 
 
 

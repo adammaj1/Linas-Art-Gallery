@@ -9,14 +9,14 @@
    
    "Gradient of the potential
 
-The gradient is more interesting. The gradient 2Df always points 'uphill':  
+   The gradient is more interesting. The gradient 2Df always points 'uphill':  
 
-2Df = f zn Dzn / |zn|2 log |zn|
+   2Df = f zn Dzn / |zn|2 log |zn|
 
-The picture below shows the modulus of the gradient.  Of course, it resembles a coronal discharge.  
-If one were to cut out a metal plate in the shape of an M-set, apply a high voltage to it, 
-it is exactly this that you would see, because it is the areas of high electric field (gradient) where the coronal ionization will occur. 
-Maybe make a chic lightning rod for the barn. " Linas Vepstas
+   The picture below shows the modulus of the gradient.  Of course, it resembles a coronal discharge.  
+   If one were to cut out a metal plate in the shape of an M-set, apply a high voltage to it, 
+   it is exactly this that you would see, because it is the areas of high electric field (gradient) where the coronal ionization will occur. 
+   Maybe make a chic lightning rod for the barn. " Linas Vepstas
    
   
    c console program:
@@ -41,8 +41,8 @@ Maybe make a chic lightning rod for the barn. " Linas Vepstas
    https://stackoverflow.com/questions/6418807/how-to-work-with-complex-numbers-in-c
    complex numbers are built in type 
  
- --------------
- formated with emacs
+   --------------
+   formated with emacs
    -------------
    to compile : 
 
@@ -61,31 +61,31 @@ Maybe make a chic lightning rod for the barn. " Linas Vepstas
 
 
    ----------------------
-   git add  electric.png electric.c
+   git add  README.md electric.png electric.c
    git commit -m " electric"
-   push -u origin master
+   git push -u origin master
 
-----------------
------------------------------------------
+   ----------------
+   -----------------------------------------
 
- No errors. End of setup 
-File electric_frac2.ppm saved. 
- Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
-  Rectangle part of 2D parameter plane: corners: 
- CxMin = -2.300000;   CxMax = 0.700000;  CyMin = -1.500000; CyMax = 1.500000 
-  center and radius: 
- CenterX = -0.800000;   CenterY = 0.000000;  radius = 1.500000
-  Mag = zoom = 0.666667
- PixelWidth = 0.003000 and PixelHeight =0.003000
- Escape Radius = 300.000000
-  Iteration Max = 88
+   No errors. End of setup 
+   File electric_frac2.ppm saved. 
+   Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
+   Rectangle part of 2D parameter plane: corners: 
+   CxMin = -2.300000;   CxMax = 0.700000;  CyMin = -1.500000; CyMax = 1.500000 
+   center and radius: 
+   CenterX = -0.800000;   CenterY = 0.000000;  radius = 1.500000
+   Mag = zoom = 0.666667
+   PixelWidth = 0.003000 and PixelHeight =0.003000
+   Escape Radius = 300.000000
+   Iteration Max = 88
   
-  i = cabs(gradient) * 255   : 
-  i_max = 254
-  i_min = -2147483648
-  gradient : 
-  gmax = 5776150.171435
-  gmin = 0.000000
+   i = cabs(gradient) * 255   : 
+   i_max = 254
+   i_min = -2147483648
+   gradient : 
+   gmax = 5776150.171435
+   gmin = 0.000000
 
 
 
@@ -169,7 +169,7 @@ void  GiveLinasColor(double position , int k, unsigned char c[])
     c[k] = 0;
     c[k+1] = (unsigned char) (i-60)*3;
     c[k+2] = (unsigned char) (120-i)*3;
-   // return 0;
+    // return 0;
   }
   
   /* ramp from green to yellow */
@@ -181,20 +181,20 @@ void  GiveLinasColor(double position , int k, unsigned char c[])
    
   }
   /* ramp from yellow to red (pink) */
- // if (i>=180 && i<iMax) {
-//    c[k] = (unsigned char) (210 + (3*(i-180))/4);
-//    c[k+1] = 0; //(unsigned char) (510 - 2*i);
- //   c[k+2] = 0; //(unsigned char) (i-180)/3;
- // }
+  // if (i>=180 && i<iMax) {
+  //    c[k] = (unsigned char) (210 + (3*(i-180))/4);
+  //    c[k+1] = 0; //(unsigned char) (510 - 2*i);
+  //   c[k+2] = 0; //(unsigned char) (i-180)/3;
+  // }
  
  
- // position , here gradient can be > 1.0 
- // colors from original image extracted with gimp  : 254/32/19, 249/44/17, 240/68/13
+  // position , here gradient can be > 1.0 
+  // colors from original image extracted with gimp  : 254/32/19, 249/44/17, 240/68/13
   if (position>1.0) {c[k] =  254;  c[k+1] =  32;     c[k+2] = 19;}
-  	else if (i>=180) {
-    		c[k] = 200 + i/5  ; // from 210  to 254 
-    		c[k+1] = 210 - i/2 ; // from 160 to 32
-    		c[k+2] = 13;}
+  else if (i>=180) {
+    c[k] = 200 + i/5  ; // from 210  to 254 
+    c[k+1] = 210 - i/2 ; // from 160 to 32
+    c[k+2] = 13;}
   
     
   
@@ -233,7 +233,7 @@ double complex GiveGradient(double complex C ){
   int i; // iteration
   double complex Z  = 0.0; // initial value for iteration Z0
   double complex dZ = 1.0; // derivative with respect to c
- // https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/def_cqp#Derivative_with_respect_to_c 
+  // https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/def_cqp#Derivative_with_respect_to_c 
   
   
   // iteration
@@ -259,7 +259,7 @@ double complex GiveGradient(double complex C ){
   
   // the Douady-Hubbard potential is just f = e-m log2 = 2-m
   double potential = pow(2,-m);
-  // 2Df = m zn Dzn / |zn|2 log |zn|
+  // 2Df = m |zn Dzn| / (|zn|2 log |zn|)
  
   g = potential*cabs(Z*dZ)/(cabsZ*cabsZ*log(cabsZ));
   

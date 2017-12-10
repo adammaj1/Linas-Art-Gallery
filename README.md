@@ -274,7 +274,9 @@ Images ware made with:
 
 The gradient is more interesting. The gradient 2Df always points 'uphill':  
 
-2Df = f zn Dzn / |zn|2 log |zn|
+2Df = f |zn Dzn| / |zn|2 log |zn|
+
+$` g =  potential \frac{|Z*dZ|}{|Z|^2 log(|Z|)} `$
 
 The picture below shows the modulus of the gradient.  Of course, it resembles a coronal discharge.  
 If one were to cut out a metal plate in the shape of an M-set, apply a high voltage to it, 
@@ -282,7 +284,10 @@ it is exactly this that you would see, because it is the areas of high electric 
 Maybe make a chic lightning rod for the barn. 
 
 
+![](electric.png)  
 
+Images ware made with: 
+* [electric.c](electric.c)
 
 
 # Prerequisites

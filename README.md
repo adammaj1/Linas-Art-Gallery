@@ -278,7 +278,7 @@ The gradient is more interesting. The gradient 2Df always points 'uphill':
 
 $` g =  potential \frac{|Z*dZ|}{|Z|^2 log(|Z|)} `$
 
-The picture below shows the modulus of the gradient.  Of course, it resembles a coronal discharge.  
+The picture below shows the modulus of the gradient.  Of course, it resembles [a coronal discharge](https://en.wikipedia.org/wiki/Corona_discharge).  
 If one were to cut out a metal plate in the shape of an M-set, apply a high voltage to it, 
 it is exactly this that you would see, because it is the areas of high electric field (gradient) where the coronal ionization will occur. 
 Maybe make a chic lightning rod for the barn. 

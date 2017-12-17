@@ -172,9 +172,14 @@ This algorithm is pretty good; its fast, its simple, but is not perfect, and it 
 
 
 
-
+Original file  
 ![winding - original image ](./html/Douady Hubbard Parameter Rays_files/winding-small.gif)
 
+New file  
+![winding.png](winding.png)
+
+Made with:
+* [winding.c](winding.c)
 
 Small defects are barely visible in the image above, but are prominent in the closeups. 
 

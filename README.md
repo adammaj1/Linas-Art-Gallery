@@ -314,9 +314,28 @@ Images ware made with:
 
 ### argument of the gradients
 
+The next picture encodes the angle of the landing rays on the M-set.  It is nothing more than the phase-angle of the gradient. The color coding is such that black=0, blue=small angle, green=pi, red=2pi. In other words, green points west, and red/black points east, just as it was in the Soviet era.
 
 
 
+![](landing.png)  
+
+Images ware made with: 
+* [landing.c](landing.c)
+
+
+###  integral flow
+
+The lines of constant phase are exactly what is referred to as the Douady-Hubbard 'external rays'. With a tiny bit of math, its easy to see that these lines of constant phase are exactly perpendicular to the equipotential lines. Using the notation introduced on the Potential Page, we have
+
+Dtn = i zn Dzn / 2 |zn|2
+
+and we recall that multiplying by i is the same as rotating by 90 degrees
+
+
+
+
+This last image shows some landing rays.  A 'landing ray' is just the integral flow along the gradient lines of the potential; i.e. the path a rock rolling down the hill to the M-set would take. We've picked 31 evenly-spaced angles at infinity; the red lines indicate the flow along these paths. The color gradations help show the behavior of some neighboring rays: i.e. the blue rays are nearby neighbors of the red rays. The spreading as they 'land' on the M-set just helps show that rays become radically divergent. The Mandelbrot interior is an artifact of the algorithm, and are not a part of the Douady-Hubbard isomorphism. See the Winding Page for more details on the derivation, and more pictures. 
 
 
 

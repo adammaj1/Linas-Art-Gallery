@@ -281,17 +281,19 @@ Images ware made with:
 ## Gradient of the potential
 
 The gradient is more interesting. The gradient 2Df always points 'uphill':  
-
+  
+   
+<p>
 
 2Df = f <u>z</u><sub>n</sub> Dz<sub>n</sub> / |z<sub>n</sub>|<sup>2</sup> log |z<sub>n</sub>|
 
-
+</p>
 
 
 
 2Df = f |zn Dzn| / |zn|2 log |zn|
 
-$` g =  potential \frac{|Z*dZ|}{|Z|^2 log(|Z|)} `$
+$` g =  potential \frac{\overline{Z}*dZ}{|Z|^2 log(|Z|)} `$
 
 The picture below shows the modulus of the gradient.  Of course, it resembles [a coronal discharge](https://en.wikipedia.org/wiki/Corona_discharge).  
 If one were to cut out a metal plate in the shape of an M-set, apply a high voltage to it, 

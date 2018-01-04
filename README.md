@@ -283,19 +283,24 @@ Images ware made with:
 The gradient is more interesting. The gradient 2Df always points 'uphill':  
   
    
-<p>
 
-2Df = f <u>z</u><sub>n</sub> Dz<sub>n</sub> / |z<sub>n</sub>|<sup>2</sup> log |z<sub>n</sub>|
+$` 2Df =  f \frac{\overline{Z}*dZ}{|Z|^2 log(|Z|)} `$
 
-</p>
+where : 
+* g = 2Df is a gradient ( complex number)
+* f is a potential ( real number)
+* $` \overline{Z}`$ is [the complex conjugate](https://en.wikipedia.org/wiki/Complex_conjugate) of a complex number Z
+* 
 
+### Modulus of the gradient
 
+The picture below shows the modulus of the gradient.  
 
-2Df = f |zn Dzn| / |zn|2 log |zn|
+```c
+gm = cabs(g);
+```
 
-$` g =  potential \frac{\overline{Z}*dZ}{|Z|^2 log(|Z|)} `$
-
-The picture below shows the modulus of the gradient.  Of course, it resembles [a coronal discharge](https://en.wikipedia.org/wiki/Corona_discharge).  
+Of course, it resembles [a coronal discharge](https://en.wikipedia.org/wiki/Corona_discharge).  
 If one were to cut out a metal plate in the shape of an M-set, apply a high voltage to it, 
 it is exactly this that you would see, because it is the areas of high electric field (gradient) where the coronal ionization will occur. 
 Maybe make a chic lightning rod for the barn. 
@@ -305,6 +310,15 @@ Maybe make a chic lightning rod for the barn.
 
 Images ware made with: 
 * [electric.c](electric.c)
+
+
+### argument of the gradients
+
+
+
+
+
+
 
 
 # Prerequisites

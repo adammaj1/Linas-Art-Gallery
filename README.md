@@ -59,6 +59,9 @@ iter18-3e0: Color is proportional to [the renormalized, fractional iteration cou
 ![iter18-3e0](./iter18-3e0.png) 
 
 
+Compare with:
+* [smooth iteration count for generalized Mandelbrot sets by inigo quilez](http://iquilezles.org/www/articles/mset_smooth/mset_smooth.htm)
+
 # Douady Hubbard Parameter Rays
 
 [Linas original page](https://linas.org/art-gallery/escape/phase/phase.html)
@@ -278,6 +281,13 @@ Images ware made with:
 ## Gradient of the potential
 
 The gradient is more interesting. The gradient 2Df always points 'uphill':  
+
+
+2Df = f <u>z</u><sub>n</sub> Dz<sub>n</sub> / |z<sub>n</sub>|<sup>2</sup> log |z<sub>n</sub>|
+
+
+
+
 
 2Df = f |zn Dzn| / |zn|2 log |zn|
 

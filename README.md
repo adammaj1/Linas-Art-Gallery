@@ -8,6 +8,7 @@
   * [Gradient of the potential](README.md#gradient-of-the-potential)
   * [Modulus of the potential](README.md#modulus-of-the-gradient)
   * [Argument of the potential](README.md#argument-of-the-gradients)
+  * [Integral flow](README.md#integral-flow)
 * [Prerequisites](README.md#prerequisites)
 * [Acknowledgments](README.md#acknowledgments)
 * [License](README.md#license)

@@ -314,6 +314,13 @@ Maybe make a chic lightning rod for the barn.
 Images ware made with: 
 * [electric.c](electric.c)
 
+>
+Your new colormap is different and ugly-ish. The line between red-and-yellow is much much worse than before.  the red-yellow discontinuity is ... confusing, annoying. .. to me, at least.
+>
+Linas
+
+(to do !!!)
+
 
 ### argument of the gradients
 
@@ -323,7 +330,7 @@ The next picture encodes the angle of the landing rays on the M-set.  It is noth
 
 ![](landing.png)  
 
-Images ware made with: 
+Images were made with: 
 * [landing.c](landing.c)
 
 

@@ -42,6 +42,7 @@ See:
 
 [Linas original page](http://linas.org/art-gallery/escape/smooth.html)
 
+## Bands 
 Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial fc(z) = z^2 + c
 * Rectangle part of 2D parameter plane: 
   * [corners](https://en.wikibooks.org/wiki/Fractals/Computer_graphic_techniques/2D/plane#Corners): CxMin = -2.000000;   CxMax = 0.700000;  CyMin = -1.350000; CyMax = 1.350000 
@@ -57,13 +58,43 @@ Bands: Color is proportional to last ( final) iteration = i for which z escapes 
 ![bands](./bands.png) 
 
 
+Names :
+* Level sets of escape time ( Level Set Method = LSM)
+* 
+
+## 
+
 iter18-3e0: Color is proportional to [the renormalized, fractional iteration count](http://linas.org/art-gallery/escape/escape.html) ( [Real Escape Time](https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Real_Escape_Time)). Level sets ( bands) of escape time  are not visible
+
+
+One of the smoothest, most mathematically correct formulas is the "renormalized" iteration count. For the iterated equation 
+
+$`z_{n+1} = z_n ^ 2 + c`$ 
+
+the renormalized count m is given by
+
+$`m = N + 1 - \frac{log(log |z_N|)}{ log 2}`$
+
+
+where:
+* N is the usual "escape count", the smallest n such that R < |zn| 
+* $`z_N`$ is the value of Z when it escaped
+* |z| is the modulus of z. (that is, if z=x+iy then |z| = sqrt (x*x+y*y) ).
+* R is Escape Radius
+
+
 
 ![iter18-3e0](./iter18-3e0.png) 
 
 
 Compare with:
 * [smooth iteration count for generalized Mandelbrot sets by inigo quilez](http://iquilezles.org/www/articles/mset_smooth/mset_smooth.htm)
+
+
+Names:
+* smooth iteration count
+* fractional iteration count
+
 
 # Douady Hubbard Parameter Rays
 
@@ -255,9 +286,16 @@ See:
 
 ## Potential
 
+The Douady-Hubbard potential f is just: 
+
+
+$` f = 2^{-m}`$
+
+
+In c code : 
+
 ```c
-// he Douady-Hubbard potential is just f = e-m log2 = 2-m
-  double potential = pow(2,-m);
+  double f = pow(2,-m); // potential 
 ```
 
 Non-normalized potential : "f gets exponentially flat as it approaches the boundary of the M-set, and thus, it looks like a very blurry low-res picture of the M-set. Boring."

@@ -95,6 +95,109 @@ Names:
 * smooth iteration count
 * fractional iteration count
 
+# Douady-Hubbard Potential
+
+## Potential
+
+The Douady-Hubbard potential f is just: 
+
+
+$` f = 2^{-m}`$
+
+
+In c code : 
+
+```c
+  double f = pow(2,-m); // potential 
+```
+
+Non-normalized potential : "f gets exponentially flat as it approaches the boundary of the M-set, and thus, it looks like a very blurry low-res picture of the M-set. Boring."
+
+![potential](potential.png)  
+
+
+Normalized potential : 
+
+```c
+m = m/IterationMax; // normalize = map to [0,1]
+```
+
+
+
+![potentialn](potentialn.png)  
+
+Images ware made with: 
+* [potential.c](potential.c)
+* [potentialn.c](potentialn.c)
+* [phase_f.sh](phase_f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
+
+
+## Gradient of the potential
+
+The gradient is more interesting. The gradient 2Df always points 'uphill':  
+  
+   
+
+$` 2Df =  f \frac{\overline{Z}*dZ}{|Z|^2 log(|Z|)} `$
+
+where : 
+* g = 2Df is a gradient ( complex number)
+* f is a potential ( real number)
+* $` \overline{Z}`$ is [the complex conjugate](https://en.wikipedia.org/wiki/Complex_conjugate) of a complex number Z
+* 
+
+### Modulus of the gradient
+
+The picture below shows the modulus of the gradient.  
+
+```c
+gm = cabs(g);
+```
+
+Of course, it resembles [a coronal discharge](https://en.wikipedia.org/wiki/Corona_discharge).  
+If one were to cut out a metal plate in the shape of an M-set, apply a high voltage to it, 
+it is exactly this that you would see, because it is the areas of high electric field (gradient) where the coronal ionization will occur. 
+Maybe make a chic lightning rod for the barn. 
+
+
+![](electric.png)  
+
+Images ware made with: 
+* [electric.c](electric.c)
+
+>
+Your new colormap is different and ugly-ish. The line between red-and-yellow is much much worse than before.  the red-yellow discontinuity is ... confusing, annoying. .. to me, at least.
+>
+Linas
+
+(to do !!!)
+
+
+### argument of the gradients
+
+The next picture encodes the angle of the landing rays on the M-set.  It is nothing more than the phase-angle of the gradient. The color coding is such that black=0, blue=small angle, green=pi, red=2pi. In other words, green points west, and red/black points east, just as it was in the Soviet era.
+
+
+
+![](landing.png)  
+
+Images were made with: 
+* [landing.c](landing.c)
+
+
+###  integral flow
+
+The lines of constant phase are exactly what is referred to as the Douady-Hubbard 'external rays'. With a tiny bit of math, its easy to see that these lines of constant phase are exactly perpendicular to the equipotential lines. Using the notation introduced on the Potential Page, we have
+
+Dtn = i zn Dzn / 2 |zn|2
+
+and we recall that multiplying by i is the same as rotating by 90 degrees
+
+
+
+
+This last image shows some landing rays.  A 'landing ray' is just the integral flow along the gradient lines of the potential; i.e. the path a rock rolling down the hill to the M-set would take. We've picked 31 evenly-spaced angles at infinity; the red lines indicate the flow along these paths. The color gradations help show the behavior of some neighboring rays: i.e. the blue rays are nearby neighbors of the red rays. The spreading as they 'land' on the M-set just helps show that rays become radically divergent. The Mandelbrot interior is an artifact of the algorithm, and are not a part of the Douady-Hubbard isomorphism. See the Winding Page for more details on the derivation, and more pictures. 
+
 
 # Douady Hubbard Parameter Rays
 
@@ -281,109 +384,6 @@ Note 2 differences
 
 See:
 * the differencesc between odd and even frames
-
-# Douady-Hubbard Potential
-
-## Potential
-
-The Douady-Hubbard potential f is just: 
-
-
-$` f = 2^{-m}`$
-
-
-In c code : 
-
-```c
-  double f = pow(2,-m); // potential 
-```
-
-Non-normalized potential : "f gets exponentially flat as it approaches the boundary of the M-set, and thus, it looks like a very blurry low-res picture of the M-set. Boring."
-
-![potential](potential.png)  
-
-
-Normalized potential : 
-
-```c
-m = m/IterationMax; // normalize = map to [0,1]
-```
-
-
-
-![potentialn](potentialn.png)  
-
-Images ware made with: 
-* [potential.c](potential.c)
-* [potentialn.c](potentialn.c)
-* [phase_f.sh](phase_f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
-
-
-## Gradient of the potential
-
-The gradient is more interesting. The gradient 2Df always points 'uphill':  
-  
-   
-
-$` 2Df =  f \frac{\overline{Z}*dZ}{|Z|^2 log(|Z|)} `$
-
-where : 
-* g = 2Df is a gradient ( complex number)
-* f is a potential ( real number)
-* $` \overline{Z}`$ is [the complex conjugate](https://en.wikipedia.org/wiki/Complex_conjugate) of a complex number Z
-* 
-
-### Modulus of the gradient
-
-The picture below shows the modulus of the gradient.  
-
-```c
-gm = cabs(g);
-```
-
-Of course, it resembles [a coronal discharge](https://en.wikipedia.org/wiki/Corona_discharge).  
-If one were to cut out a metal plate in the shape of an M-set, apply a high voltage to it, 
-it is exactly this that you would see, because it is the areas of high electric field (gradient) where the coronal ionization will occur. 
-Maybe make a chic lightning rod for the barn. 
-
-
-![](electric.png)  
-
-Images ware made with: 
-* [electric.c](electric.c)
-
->
-Your new colormap is different and ugly-ish. The line between red-and-yellow is much much worse than before.  the red-yellow discontinuity is ... confusing, annoying. .. to me, at least.
->
-Linas
-
-(to do !!!)
-
-
-### argument of the gradients
-
-The next picture encodes the angle of the landing rays on the M-set.  It is nothing more than the phase-angle of the gradient. The color coding is such that black=0, blue=small angle, green=pi, red=2pi. In other words, green points west, and red/black points east, just as it was in the Soviet era.
-
-
-
-![](landing.png)  
-
-Images were made with: 
-* [landing.c](landing.c)
-
-
-###  integral flow
-
-The lines of constant phase are exactly what is referred to as the Douady-Hubbard 'external rays'. With a tiny bit of math, its easy to see that these lines of constant phase are exactly perpendicular to the equipotential lines. Using the notation introduced on the Potential Page, we have
-
-Dtn = i zn Dzn / 2 |zn|2
-
-and we recall that multiplying by i is the same as rotating by 90 degrees
-
-
-
-
-This last image shows some landing rays.  A 'landing ray' is just the integral flow along the gradient lines of the potential; i.e. the path a rock rolling down the hill to the M-set would take. We've picked 31 evenly-spaced angles at infinity; the red lines indicate the flow along these paths. The color gradations help show the behavior of some neighboring rays: i.e. the blue rays are nearby neighbors of the red rays. The spreading as they 'land' on the M-set just helps show that rays become radically divergent. The Mandelbrot interior is an artifact of the algorithm, and are not a part of the Douady-Hubbard isomorphism. See the Winding Page for more details on the derivation, and more pictures. 
 
 
 

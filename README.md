@@ -189,7 +189,7 @@ Images were made with:
 
 The lines of constant phase are exactly what is referred to as the Douady-Hubbard 'external rays'. With a tiny bit of math, its easy to see that these lines of constant phase are exactly perpendicular to the equipotential lines. Using the notation introduced on the Potential Page, we have
 
-Dtn = i zn Dzn / 2 |zn|2
+$`Dt_n = \frac{i z_n Dz_n }{ 2 |z_n|^2}`$
 
 and we recall that multiplying by i is the same as rotating by 90 degrees
 

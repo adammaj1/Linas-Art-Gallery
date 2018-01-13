@@ -16,11 +16,11 @@
 
 
 
-# Project Title
+
 
 [Linas' Art Gallery](http://linas.org/art-gallery/index.html)
 
-I couldn't run the programs so I made my own based on the description of algorithms
+I couldn't run the Linas' programs so I made my own based on the description of algorithms
 
 See:
 * modified html files in html directory
@@ -29,11 +29,6 @@ See:
 * [Linas Vepstas C programs](http://fraktal.republika.pl/linas.html)
 * Images: static (png) and animated (gif)
 * c and sh files 
-
-# functions
-* atan function : [returns the principal arc tangent of x, in the interval [-pi/2,+pi/2] radians.](https://www.tutorialspoint.com/c_standard_library/c_function_atan.htm)
-
-
 
 
 
@@ -62,7 +57,7 @@ Names :
 * Level sets of escape time ( Level Set Method = LSM)
 * 
 
-## 
+## Smooth
 
 iter18-3e0: Color is proportional to [the renormalized, fractional iteration count](http://linas.org/art-gallery/escape/escape.html) ( [Real Escape Time](https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Real_Escape_Time)). Level sets ( bands) of escape time  are not visible
 
@@ -433,6 +428,8 @@ See:
 * the differencesc between odd and even frames
 
 
+# functions
+* atan function : [returns the principal arc tangent of x, in the interval [-pi/2,+pi/2] radians.](https://www.tutorialspoint.com/c_standard_library/c_function_atan.htm)
 
 
 # Prerequisites

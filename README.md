@@ -189,15 +189,14 @@ Images were made with:
 Q: If landing : "encodes the angle of the landing rays on the M-set.  It is nothing more than the phase-angle of the gradient." why the image ( landing.gif)  is not the same as phase ( winding.gif) ?
 
 A: 
->
-Good question. From very far away, they are the same. They differ sharply  when you get close. So:
-
-The gradient is a vector: it always points uphill. The direction in which it points is the phase-angle.  Imagine being in the mountains - uphill is some compass direction, it could be any direction at all, depending on the valleys, ridges.   As you get close to the M-set, the uphill direction can point pretty much anywhere. Try zooming in on landing.gif, and you will see.   So, you are on the mountain, force yourself to face uphill. If uphill is north, splash blue paint on the ground. If uphill is east, splash green paint on the ground. If uphill is south, splash yellow where you are standing.  The color encodes the uphill direction. 
+>>>
+Good question. From very far away, they are the same. They differ sharply  when you get close. 
+So:  The gradient is a vector: it always points uphill.  The direction in which it points is the phase-angle.  Imagine being in the mountains - uphill is some compass direction, it could be any direction at all, depending on the valleys, ridges.   As you get close to the M-set, the uphill direction can point pretty much anywhere. Try zooming in on landing.gif, and you will see.   So, you are on the mountain, force yourself to face uphill. If uphill is north, splash blue paint on the ground. If uphill is east, splash green paint on the ground. If uphill is south, splash yellow where you are standing.  The color encodes the uphill direction. 
 
 Now winding.gif is the same as landing.gif very far away.  Up close it is a very different idea.  Up close, the color is "where you came from".   Say you approach a mountain from the north (so you are walking south). Lets call that "yellow".  Now walk uphill, and only straight uphill, and never sideways.  Paint a yellow line behind you as you walk.   That yellow line is the landing ray.  As you walk uphill, continue to paint in yellow. 
 You might face north, south, east, whatever, but the line will always be yellow, because yellow is the color is where you came from.  
 No matter where you go, if you go uphill, the line stays yellow.
->
+>>>
  
 
 
@@ -229,7 +228,7 @@ See the Winding Page for more details on the derivation, and more pictures.
 Q: "the integral flow along the gradient lines of the potential" here integral is the line integral ? 
 
 A: 
->
+>>>
 Not really. The "line integral" is the integral along any path you walk. You can walk up, down, sideways, anywhere you want, and the line integral is just the sum along that path.
 
 The "integral flow" is a different idea: its the idea that "water always flows directly downhill".  So, if a raindrop hits the side of a mountain, which direction does it flow? Downhill.
@@ -244,7 +243,7 @@ By contrast, you can *always* comb the hair on a donut, with no bald spots or do
 If you have some complicated shape, and you don't know what shape it is, but if you can comb the hair on it .. then .. you know its not a sphere ... 
 
 --linas
->
+>>>
 
 
 # Douady Hubbard Parameter Rays

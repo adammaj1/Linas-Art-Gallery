@@ -53,6 +53,11 @@ Bands: Color is proportional to last ( final) iteration = i for which z escapes 
 ![bands](./bands.png) 
 
 
+Code:
+* [bands.c](bands.c)
+
+
+
 Names :
 * Level sets of escape time ( Level Set Method = LSM)
 * 
@@ -80,6 +85,11 @@ where:
 
 
 ![iter18-3e0](./iter18-3e0.png) 
+
+
+
+Code:
+* [iter18-3e0.c](iter18-3e0.c)
 
 
 Compare with:

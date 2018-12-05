@@ -285,7 +285,7 @@ Code:
 Compare with:
 * [ External angles in the Mandelbrot set: the work of Douady and Hubbard. by Professor Douglas C. Ravenel](https://web.math.rochester.edu/people/faculty/doug/oldcourses/215s98/lecture10.html)
 * [Mandelbrot set decomposition](http://fraktal.republika.pl/mset_decomposition.html)
-
+* [External Arguments of the Mandelbrot Set (The Turning of the Wheel) by Faber](https://sites.google.com/site/fabstellar84/fractals/external-angles)
 
 
 

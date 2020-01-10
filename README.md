@@ -402,7 +402,7 @@ However, this algorithm has some serious spread-out error terms, as shown here. 
 
 
 
-![](./html/Douady Hubbard Parameter Rays_files/algo-diff-small.gif )
+![](html/Douady Hubbard Parameter Rays_files/algo-diff-small.gif )
 
 
 

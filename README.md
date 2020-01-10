@@ -50,7 +50,7 @@ Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial 
 
 Bands: Color is proportional to last ( final) iteration = i for which z escapes ( [Level set method = LSM/M or Integer Escape Time](https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Integer_escape_time_.3D_LSM.2FM_.3D_dwell_bands) ). Level sets ( bands) of escape time  are visible
 
-![bands](./bands.png) 
+![bands](./images/bands.png) 
 
 
 Code:
@@ -84,7 +84,7 @@ where:
 
 
 
-![iter18-3e0](./iter18-3e0.png) 
+![iter18-3e0](./images/iter18-3e0.png) 
 
 
 
@@ -118,7 +118,7 @@ In c code :
 
 Non-normalized potential : "f gets exponentially flat as it approaches the boundary of the M-set, and thus, it looks like a very blurry low-res picture of the M-set. Boring."
 
-![potential](potential.png)  
+![potential](./images/potential.png)  
 
 
 Normalized potential : 
@@ -129,7 +129,7 @@ m = m/IterationMax; // normalize = map to [0,1]
 
 
 
-![potentialn](potentialn.png)  
+![potentialn](./images/potentialn.png)  
 
 Images ware made with: 
 * [potential.c](potential.c)
@@ -165,7 +165,7 @@ it is exactly this that you would see, because it is the areas of high electric 
 Maybe make a chic lightning rod for the barn. 
 
 
-![](electric.png)  
+![](./images/electric.png)  
 
 Images ware made with: 
 * [electric.c](electric.c)
@@ -184,7 +184,7 @@ The next picture encodes the angle of the landing rays on the M-set.  It is noth
 
 
 
-![](landing.png)  
+![](./images/landing.png)  
 
 Images were made with: 
 * [landing.c](landing.c)
@@ -269,7 +269,7 @@ Parameter plane ( c plane) with Mandelbrot set for complex quadratic polynomial 
 ## Phase
 Phase: color is proportional to angle ( phase) in turns of last Z ( final Z). Level sets ( bands) of escape time  are visible
 
-![phase](./phase.png)
+![phase](./images/phase.png)
 
 Steps
 * pick c which is your pixel
@@ -295,7 +295,7 @@ Compare with:
 
 (to do !!!!)
 
-How to remove from [phase image](phase.png): 
+How to remove from [phase image](./images/phase.png): 
 * level sets of escape time
 * doubling of bands inside level sets 
 
@@ -325,7 +325,7 @@ $`angle(c) =  2 pi * cnt / 2^N`$
 and that is all.
 
 
-![ ](phase_cnt.png)
+![ ](./images/phase_cnt.png)
 
 It was made with:
 * [phase_cnt.c](phase_cnt.c)
@@ -371,7 +371,7 @@ Original file
 ![winding - original image ](./html/Douady Hubbard Parameter Rays_files/winding-small.gif)
 
 New file  
-![winding.png](winding.png)
+![winding.png](./images/winding.png)
 
 Made with:
 * [winding.c](winding.c)
@@ -411,7 +411,7 @@ However, this algorithm has some serious spread-out error terms, as shown here. 
 
 There is no such image in Linas gallery, but I think it could be there
 
-![](phase_f.gif)  
+![](./images/phase_f.gif)  
 
 Image was made with 
 * [phase_f.c](phase_f.c)
@@ -498,6 +498,29 @@ git add html
 git commit -m "html"
 git push -u origin master
 ```
+
+
+Subdirectory
+
+```git
+mkdir images
+git add *.png
+git mv  *.png ./images
+git commit -m "move"
+git push -u origin master
+```
+then link the images:
+
+```txt
+![](./images/n.png "description") 
+```
+
+
+
+
+local repo : ~/c/mandel/linas
+
+
 
 
 ## HTML preview

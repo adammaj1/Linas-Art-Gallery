@@ -2,9 +2,9 @@
 /* 
 
 
-   http://linas.org/art-gallery/escape/phase/phase.html
+   http://linas.org/art-gallery/escape/smooth.html
    image 
-   http://linas.org/art-gallery/escape/phase/phase.gif
+   http://linas.org/art-gallery/escape/iter18-3e0.gif
   
    c console program:
    
@@ -35,7 +35,7 @@
 
  
  
-   gcc phase.c -lm -Wall 
+   gcc iter18-3e0.c -lm -Wall 
  
  
    ./a.out
@@ -43,13 +43,12 @@
    
    to convert to png using ImageMagic
 
-   convert phase.ppm phase.png  
+   convert iter18-3e0.ppm iter18-3e0.png  
 
 
 
    ----------------------
-   git add  phase.png phase.c README.md
-   git commit -m "phase"
+   git add  iter18-3e0.png iter18-3e0.c
    push -u origin master
 
 
@@ -76,10 +75,10 @@ const int iHeight = 1000;
 
 /* world ( double) coordinate = parameter plane*/
 // double complex C =  Cx + Cy*I ;
-const double CxMin=-2.4;
-const double CxMax= 1.5;
-const double CyMin=-1.95;
-const double CyMax= 1.95;
+const double CxMin=-2.0;
+const double CxMax= 0.7;
+const double CyMin=-1.35;
+const double CyMax= 1.35;
 
 /* */
 double PixelWidth; //=(CxMax-CxMin)/iWidth;
@@ -91,13 +90,11 @@ double PixelHeight; // =(CyMax-CyMin)/iHeight;
 int ColorBytes = 3; // 3*8 = 24 bit color        
 
 /* iterations  */
-const int IterationMax=400;
+const int IterationMax=18;
 
 /* bail-out value , radius of circle ;  */
 const double EscapeRadius=3.0;
-
-double TwoPi=2.0*M_PI;
-
+double log_2; // = log(2.0);
        
 // memmory virtual 1D array 
 unsigned char *data;       
@@ -155,7 +152,7 @@ int f(int ix, int iy)
         
 double complex give_c(int iX, int iY){
   double Cx,Cy;
-  Cy=CyMax - iY*PixelHeight; // inverse y axis
+  Cy=CyMin + iY*PixelHeight;
   
   Cx=CxMin + iX*PixelWidth;
    
@@ -166,14 +163,6 @@ double complex give_c(int iX, int iY){
  
  
 
-double GiveTurn(double complex z)
-{
-  double argument;
- 
-  argument = carg(z); //   argument in radians from -pi to pi
-  if (argument<0) argument=argument + TwoPi; //   argument in radians from 0 to 2*pi
-  return argument/TwoPi ; // argument in turns from 0.0 to 1.0
-}
 
 int ComputeAndSavePixelColor(int iX, int iY){
  
@@ -197,9 +186,15 @@ int ComputeAndSavePixelColor(int iX, int iY){
   // index of 1D memory array
   k = f(iX, iY);  
     
- 
-  double t = GiveTurn(Z);
-  GiveLinasColor(t , k,  data); 
+  // the renormalized, fractional iteration count
+  // m(R) = n+1 - log(log |zn|) / log 2
+  // http://linas.org/art-gallery/escape/escape.html
+    
+  double m = i + 1.0 - log(log(cabs(Z)))/log_2;
+  m = m/IterationMax; // normalize = map to [0,1]
+   
+  //Apply this method to both exterior and interior 
+  GiveLinasColor(m , k,  data); // https://linas.org/art-gallery/escape/iter18-3e0.gif
       
     
  
@@ -215,7 +210,7 @@ int setup(){
   PixelWidth=(CxMax-CxMin)/iWidth;
   PixelHeight=(CyMax-CyMin)/iHeight;
   //
-    
+  log_2 = log(2.0);  
   //
   MemmorySize = iWidth * iHeight * ColorBytes * sizeof (unsigned char);	// https://stackoverflow.com/questions/492384/how-to-find-the-sizeof-a-pointer-pointing-to-an-array
         
@@ -239,7 +234,7 @@ int SaveArray_2_PPM_file (unsigned char A[])
 
   FILE *fp;
   const unsigned int MaxColorComponentValue = 255;	/* color component is coded from 0 to 255 ;  it is 8 bit color file */
-  char *filename = "phase.ppm";
+  char *filename = "iter18-3e0.ppm";
   char *comment = "# ";		/* comment should start with # */
 
   /* save image to the pgm file  */

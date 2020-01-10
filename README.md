@@ -54,7 +54,7 @@ Bands: Color is proportional to last ( final) iteration = i for which z escapes 
 
 
 Code:
-* [bands.c](bands.c)
+* [bands.c](./src/bands.c)
 
 
 
@@ -89,7 +89,7 @@ where:
 
 
 Code:
-* [iter18-3e0.c](iter18-3e0.c)
+* [iter18-3e0.c](./src/iter18-3e0.c)
 
 
 Compare with:
@@ -132,9 +132,9 @@ m = m/IterationMax; // normalize = map to [0,1]
 ![potentialn](./images/potentialn.png)  
 
 Images ware made with: 
-* [potential.c](potential.c)
-* [potentialn.c](potentialn.c)
-* [phase_f.sh](phase_f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
+* [potential.c](./src/potential.c)
+* [potentialn.c](./src/potentialn.c)
+* [phase_f.sh](./src/phase_f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
 
 
 ## Gradient of the potential
@@ -168,7 +168,7 @@ Maybe make a chic lightning rod for the barn.
 ![](./images/electric.png)  
 
 Images ware made with: 
-* [electric.c](electric.c)
+* [electric.c](./src/electric.c)
 
 >
 Your new colormap is different and ugly-ish. The line between red-and-yellow is much much worse than before.  the red-yellow discontinuity is ... confusing, annoying. .. to me, at least.
@@ -187,7 +187,7 @@ The next picture encodes the angle of the landing rays on the M-set.  It is noth
 ![](./images/landing.png)  
 
 Images were made with: 
-* [landing.c](landing.c)
+* [landing.c](./src/landing.c)
 
 
 
@@ -280,7 +280,7 @@ Clearly, you can see bands encircling the m-set, and each band winds twice as of
 
 
 Code:
-* [phase.c](phase.c)
+* [phase.c](./src/phase.c)
 
 Compare with:
 * [ External angles in the Mandelbrot set: the work of Douady and Hubbard. by Professor Douglas C. Ravenel](https://web.math.rochester.edu/people/faculty/doug/oldcourses/215s98/lecture10.html)
@@ -328,7 +328,7 @@ and that is all.
 ![ ](./images/phase_cnt.png)
 
 It was made with:
-* [phase_cnt.c](phase_cnt.c)
+* [phase_cnt.c](./src/phase_cnt.c)
 
 
 ### simple algorithm  (binary)
@@ -374,7 +374,7 @@ New file
 ![winding.png](./images/winding.png)
 
 Made with:
-* [winding.c](winding.c)
+* [winding.c](./src/winding.c)
 
 Small defects are barely visible in the image above, but are prominent in the closeups. 
 
@@ -414,8 +414,8 @@ There is no such image in Linas gallery, but I think it could be there
 ![](./images/phase_f.gif)  
 
 Image was made with 
-* [phase_f.c](phase_f.c)
-* [phase_f.sh](phase_f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
+* [phase_f.c](./src/phase_f.c)
+* [phase_f.sh](./src/phase_f.sh) and [Image Magic](https://www.imagemagick.org/script/convert.php)
 
 In the right up corner each frame one can see a number wich shows maximal number of iterations for this frame.
 

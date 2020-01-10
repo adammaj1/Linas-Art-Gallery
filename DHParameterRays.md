@@ -10,7 +10,7 @@
 We start this exploration with a picture showing **the final phase angle** when an iterated point finally escapes.  
 
 
-![phase](./phase.png)  
+![phase](./images/phase.png)  
 
 
   
@@ -112,7 +112,15 @@ Rays in the vicinity of the n=2 bud. [![](./html/Douady Hubbard Parameter Rays_f
 Be sure to also check the bibliography on the [Potential Page](https://linas.org/art-gallery/escape/ray.html) for more details.
 
 
-
+# Compare with:
+* [Computation of the external argument of The Mandelbrot set ](http://www.mndynamics.com/indexp.html#XR) by Wolf Jung
+* [ArgPhi function from program Mandel by Wolf Jung](http://fraktal.republika.pl/cpp_argphi.html)
+* [Mandelbrot function, part 1](http://www.quadibloc.com/math/mbint.htm) by John J. G. Savard in Basic , [part 2](http://www.quadibloc.com/math/mb01.htm)
+* [How to process branch cut lines of Böttcher function in Mathematica](http://math-functions-1.watson.jp/sub4_math_020.html)
+* [MandelbrotSetBoettcher in Mathematica](http://reference.wolfram.com/language/ref/MandelbrotSetBoettcher.html)
+* [Decomposition of exterior of Mandelbrot set](http://fraktal.republika.pl/mset_decomposition.html)
+* [SAC = Stripe Average Coloring](https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/stripeAC)
+* [zeros of iterated polynomials](https://en.wikibooks.org/wiki/Fractals/mandel#algorithm_9_:_zeros_of_qn.28c.29)
 
 # technical note
 GitLab uses:
@@ -124,4 +132,13 @@ GitLab uses:
 Here is translation to markdown format 
 
 
+
+
 [Return to Linas' Art Gallery](https://linas.org/art-gallery/index.html)
+
+
+
+# technical note
+GitLab uses:
+* the Redcarpet Ruby library for [Markdown processing](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)
+* KaTeX to render [math written with the LaTeX syntax](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md), but [only subset](https://khan.github.io/KaTeX/function-support.html)

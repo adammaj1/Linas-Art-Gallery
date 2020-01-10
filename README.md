@@ -316,11 +316,11 @@ Steps
   * set  cnt = 2*cnt; because the next iteration is doubling the angle.
 * Repeat until escape.
 
-$`angle(c) =  (2 pi * cnt + phase(z_{final}))  / 2^N`$
+$`angle(c) =  \frac{2 pi * cnt + phase(z_{final})}{ 2^N}`$
 
-Note that if N is large, then $`phase(z_{final})/2^N`$ is small, and you can  ignore it. then one simply has:
+Note that if N is large, then $`\frac{phase(z_{final})}{2^N}`$ is small, and you can  ignore it. then one simply has:
 
-$`angle(c) =  2 pi * cnt / 2^N`$
+$`angle(c) =  \frac{2 pi * cnt }{ 2^N}`$
 
 and that is all.
 
@@ -387,7 +387,7 @@ Small defects are barely visible in the image above, but are prominent in the cl
 
 Here's an example of an 'almost' correct algorithm. The idea here is to try to step/integrate along lines of constant phase, moving away from the M-set. We use the vector Dm (employing the notation introduced on the Potential Page) as a predictor to step one iteration at a time away from the M-set. The explicit algorithm is this: Define a sequence {ck} with c0 = c and k<n, where n is the number of times that c is iterated until it reaches some (large) escape radius. Then try
 
-$`c_{k+1} = c_k - 2Dmk/|Dmk|2`$
+$`c_{k+1} = c_k - \frac{2Dmk}{|Dmk|^2}`$
 
 where Dmk is the derivative of the fractional iteration count m at ck. 
 
